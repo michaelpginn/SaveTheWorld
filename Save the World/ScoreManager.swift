@@ -16,7 +16,8 @@ class ScoreManager: NSObject {
         //UPDATE SCORE
         persistenceStoreManager.score += points
         if(self.level != oldLevel){
-            //TODO LEVEL UP BITCH
+            NotificationCenter.default.post(name: .LevelUp, object: nil)
+            print("LEVEL UP")
         }
     }
     
@@ -26,12 +27,12 @@ class ScoreManager: NSObject {
             switch(points){
             case 0..<5:
                 return 1
-            case 5..<10:
+            case 5..<15:
                 return 2
-            case 10..<20:
+            case 15..<25:
                 return 3
             default:
-                return 4 + ((points - 20) / 10)
+                return 4 + ((points - 25) / 10)
             }
         }
     }

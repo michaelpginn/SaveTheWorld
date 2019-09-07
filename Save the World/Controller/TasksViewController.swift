@@ -33,8 +33,6 @@ class TasksViewController: UIViewController, UITableViewDataSource {
                 let task = tasksStore[indexPath.row]
                 persistentStore.completeTask(task: task)
                 api.postAction(action: Action(username: api.username!, description: "completed a task", taskId: task.id, dateTime: Date()))
-                
-                persistentStore.completeTask(task: tasksStore[indexPath.row])
                 scoreManager.addPoints(points: tasksStore[indexPath.row].points)
                 NotificationCenter.default.post(name: .TaskCompleted, object: nil)
                 self.dismiss(animated: true)

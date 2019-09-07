@@ -11,6 +11,8 @@ import SpriteKit
 
 class WorldGameViewController: UIViewController {
     @IBOutlet var gameView: SKView!
+    
+    var scoreManager = ScoreManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +21,29 @@ class WorldGameViewController: UIViewController {
         view.backgroundColor = .clear
         gameView.ignoresSiblingOrder = true
         gameView.allowsTransparency = true
+        gameView.presentScene(createScene())
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.levelUp), name: .LevelUp, object: nil)
+    }
+    
+    @objc func levelUp(){
+
+        gameView.presentScene(createScene(), transition: .crossFade(withDuration: 1.0))
+    }
+    
+    private func createScene()->WorldScene{
         let scene = WorldScene()
-        scene.stage = .greenBlue
+        switch scoreManager.level {
+        case 1:
+            scene.stage = .brown
+        case 2:
+            scene.stage = .blue
+        default:
+            scene.stage = .greenBlue
+        }
+        
         scene.scaleMode = .resizeFill
-        gameView.presentScene(scene)
+        return scene
     }
     
 }
