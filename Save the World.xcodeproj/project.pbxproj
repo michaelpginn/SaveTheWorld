@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		3972EF8D2323648600AB442B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3972EF8C2323648600AB442B /* GoogleService-Info.plist */; };
 		3972EF8F232376BB00AB442B /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3972EF8E232376BB00AB442B /* LaunchScreen.swift */; };
+		6DC27428B63977DA49EF4B72 /* Pods_Save_the_World.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C893CE14CC8FAE3A11506E /* Pods_Save_the_World.framework */; };
+		6FCD3A658133EE6E41ABD8CF /* Pods_Save_the_World_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC70358EEA42439A59C5E63 /* Pods_Save_the_World_Tests.framework */; };
+		9562FB842323F3FA00590407 /* PersistentStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562FB832323F3FA00590407 /* PersistentStoreManager.swift */; };
 		9598AC7E2323DE26004A04BD /* Save_the_World_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */; };
 		9598AC872323EB9C004A04BD /* STWModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */; };
 		959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3A72322FB76006AA75B /* AppDelegate.swift */; };
@@ -37,6 +40,11 @@
 /* Begin PBXFileReference section */
 		3972EF8C2323648600AB442B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3972EF8E232376BB00AB442B /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		3EC70358EEA42439A59C5E63 /* Pods_Save_the_World_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_the_World_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		51A9A35BAF0B2DAD5DE674D2 /* Pods-Save the World Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World Tests.debug.xcconfig"; path = "Target Support Files/Pods-Save the World Tests/Pods-Save the World Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		57C893CE14CC8FAE3A11506E /* Pods_Save_the_World.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_the_World.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F2383275F35AD9A0BD3ABA /* Pods-Save the World.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World.debug.xcconfig"; path = "Target Support Files/Pods-Save the World/Pods-Save the World.debug.xcconfig"; sourceTree = "<group>"; };
+		9562FB832323F3FA00590407 /* PersistentStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStoreManager.swift; sourceTree = "<group>"; };
 		9598AC7B2323DE26004A04BD /* Save the World Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Save the World Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save_the_World_Tests.swift; sourceTree = "<group>"; };
 		9598AC7F2323DE26004A04BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -54,6 +62,8 @@
 		959EF3C623237655006AA75B /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		959EF3C8232376F0006AA75B /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		959EF3CB232377B4006AA75B /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		CE42C425F3CCEDF224EAAB61 /* Pods-Save the World Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World Tests.release.xcconfig"; path = "Target Support Files/Pods-Save the World Tests/Pods-Save the World Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D43CB9C7DED991ED95EFDBEB /* Pods-Save the World.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World.release.xcconfig"; path = "Target Support Files/Pods-Save the World/Pods-Save the World.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6FCD3A658133EE6E41ABD8CF /* Pods_Save_the_World_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,15 +79,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DC27428B63977DA49EF4B72 /* Pods_Save_the_World.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2ABFCB9D4EFCBEB8ADB8E26E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57C893CE14CC8FAE3A11506E /* Pods_Save_the_World.framework */,
+				3EC70358EEA42439A59C5E63 /* Pods_Save_the_World_Tests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7387067BAEC393CD38F705A8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+				94F2383275F35AD9A0BD3ABA /* Pods-Save the World.debug.xcconfig */,
+				D43CB9C7DED991ED95EFDBEB /* Pods-Save the World.release.xcconfig */,
+				51A9A35BAF0B2DAD5DE674D2 /* Pods-Save the World Tests.debug.xcconfig */,
+				CE42C425F3CCEDF224EAAB61 /* Pods-Save the World Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -97,6 +122,7 @@
 				9598AC7C2323DE26004A04BD /* Save the World Tests */,
 				959EF3A52322FB76006AA75B /* Products */,
 				7387067BAEC393CD38F705A8 /* Pods */,
+				2ABFCB9D4EFCBEB8ADB8E26E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -151,6 +177,7 @@
 				959EF3C8232376F0006AA75B /* Action.swift */,
 				959EF3CB232377B4006AA75B /* Task.swift */,
 				9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */,
+				9562FB832323F3FA00590407 /* PersistentStoreManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +189,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9598AC842323DE26004A04BD /* Build configuration list for PBXNativeTarget "Save the World Tests" */;
 			buildPhases = (
+				A8A5DEDBAF630D2DF8BA0192 /* [CP] Check Pods Manifest.lock */,
 				9598AC772323DE26004A04BD /* Sources */,
 				9598AC782323DE26004A04BD /* Frameworks */,
 				9598AC792323DE26004A04BD /* Resources */,
@@ -180,9 +208,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 959EF3B82322FB79006AA75B /* Build configuration list for PBXNativeTarget "Save the World" */;
 			buildPhases = (
+				F61A0DE6C9E0B2AFFEBE27D1 /* [CP] Check Pods Manifest.lock */,
 				959EF3A02322FB76006AA75B /* Sources */,
 				959EF3A12322FB76006AA75B /* Frameworks */,
 				959EF3A22322FB76006AA75B /* Resources */,
+				033ED0A794739867C4A4BC93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +282,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		033ED0A794739867C4A4BC93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Save the World/Pods-Save the World-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Save the World/Pods-Save the World-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Save the World/Pods-Save the World-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8A5DEDBAF630D2DF8BA0192 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Save the World Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F61A0DE6C9E0B2AFFEBE27D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Save the World-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9598AC772323DE26004A04BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -275,6 +369,7 @@
 				959EF3C9232376F0006AA75B /* Action.swift in Sources */,
 				959EF3C123232EEB006AA75B /* WorldGameViewController.swift in Sources */,
 				959EF3C523233836006AA75B /* Sticker.swift in Sources */,
+				9562FB842323F3FA00590407 /* PersistentStoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +405,7 @@
 /* Begin XCBuildConfiguration section */
 		9598AC822323DE26004A04BD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51A9A35BAF0B2DAD5DE674D2 /* Pods-Save the World Tests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -331,6 +427,7 @@
 		};
 		9598AC832323DE26004A04BD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE42C425F3CCEDF224EAAB61 /* Pods-Save the World Tests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -468,6 +565,7 @@
 		};
 		959EF3B92322FB79006AA75B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94F2383275F35AD9A0BD3ABA /* Pods-Save the World.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -487,6 +585,7 @@
 		};
 		959EF3BA2322FB79006AA75B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D43CB9C7DED991ED95EFDBEB /* Pods-Save the World.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

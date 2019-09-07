@@ -6,8 +6,12 @@ target 'Save the World' do
   use_frameworks!
 
   # Pods for Save the World
-
-pod 'Firebase/Core'
+	pod 'Firebase/Core'
 pod 'Firebase/Firestore'
+
+  target 'Save the World Tests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
 
 end
