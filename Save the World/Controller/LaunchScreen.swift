@@ -36,7 +36,6 @@ class LaunchScreen: UIViewController, UITextFieldDelegate {
             else {
                 let alert = UIAlertController(title: "Username taken", message:  "HAHA SUX 4 U. That name is already taken. SUX 2 SUX", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: ":(", style: .default, handler: nil))
-                
                 self.present(alert, animated: true)
             }
         })

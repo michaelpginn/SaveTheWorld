@@ -10,10 +10,10 @@
 import UIKit
 import CoreData
 
+typealias Friend = String
+
 class PersistentStoreManager: NSObject {
     let defaults = UserDefaults.standard
-    typealias Friendo = String
-    
     var username:String?{
         get{
             return defaults.string(forKey: "username")
@@ -32,9 +32,9 @@ class PersistentStoreManager: NSObject {
         }
     }
     
-    var friendoList:[Friendo]{
+    var friendList:[Friend]{
         get{
-            return (defaults.array(forKey: "friends") ?? []) as [Friendo]
+            return (defaults.array(forKey: "friends") ?? []) as [Friend]
         }
         set(i){
             defaults.set(i, forKey: "friends")
