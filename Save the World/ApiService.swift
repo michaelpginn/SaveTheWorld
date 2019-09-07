@@ -32,24 +32,25 @@ class ApiService: NSObject {
         return []
     }
     
-    /// Checks if a user matching a username exists before adding to friend list
-     func checkFriend(username:String)->Bool{
-        return false
-    }
-    
-    /// Gets non completed tasks for a user
-     func getTasks()->[Task]{
-        return []
-    }
-    
-    /// Signs up a user with a given username, returns success
-    func signUp(username:String, completion:@escaping (Bool)->Void){
+    func checkUsernameExists(username:String, completion:@escaping (Bool)->Void){
         ref.child("users").observeSingleEvent(of: .value, with:{ snapshot in
             if snapshot.hasChild(username){
                 completion(false)
             }
         })
-        ref.child("users").child(username).setValue(["username": username, "score":0])
         completion(true)
+    }
+    
+    /// Gets non completed tasks for a user
+    func getTasks(completedTasks:[Task])->[Task]{
+        return []
+    }
+    
+    /// Signs up a user with a given username, returns success
+    func signUp(username:String, completion:@escaping (Bool)->Void){
+        checkUsernameExists(username: username) { (success) in
+            if success{ self.ref.child("users").child(username).setValue(["username": username, "score":0])
+            }
+        }
     }
 }
