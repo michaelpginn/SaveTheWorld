@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     let defaults = UserDefaults.standard
     let tasksStore = TasksStore()
+    @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,9 @@ class HomeViewController: UIViewController {
         //check for first login
         if(defaults.string(forKey: "username") == nil){
             self.performSegue(withIdentifier: "showSignup", sender: self)
+        }
+        else {
+            self.usernameLabel.text = defaults.string(forKey: "username")
         }
     }
     
