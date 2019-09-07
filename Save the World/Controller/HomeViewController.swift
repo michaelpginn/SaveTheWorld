@@ -23,6 +23,8 @@ class HomeViewController: UIViewController {
         view.addSubview(bgView)
         view.sendSubviewToBack(bgView)
         view.contentMode = .scaleAspectFill
+        
+        tasksStore.loadMore()
     }
     
     override func viewDidAppear(_ animated: Bool) {
