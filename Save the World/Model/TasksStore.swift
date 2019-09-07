@@ -9,12 +9,25 @@
 import UIKit
 
 class TasksStore: NSObject {
-    var tasks: [Task] = []
-    var offset = 0
+    private var tasks: [Task] = []
+    private var offset = 0
     var gotAll = false
-    var api = ApiService()
+    private var api = ApiService()
     
-    func getMore(){
+    /// Loads another 10 items from the api
+    func loadMore(){
         
+    }
+    
+    subscript(index:Int)->Task{
+        get{
+            return tasks[index]
+        }
+    }
+    
+    var count:Int{
+        get{
+            return tasks.count
+        }
     }
 }

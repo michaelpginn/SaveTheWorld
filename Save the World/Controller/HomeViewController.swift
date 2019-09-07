@@ -10,7 +10,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     let defaults = UserDefaults.standard
-    let api = ApiService()
+    let tasksStore = TasksStore()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +32,7 @@ class HomeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showTasks"{
             if let destVC = segue.destination as? TasksViewController{
-                destVC.apis
+                destVC.tasksStore = self.tasksStore
             }
         }
     }

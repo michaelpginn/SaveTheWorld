@@ -9,9 +9,9 @@
 import UIKit
 
 class TasksViewController: UIViewController, UITableViewDataSource {
-    
     @IBOutlet weak var tableView: UITableView!
-    var tasks:[Task] = []
+    
+    var tasksStore: TasksStore!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +21,13 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tasks.count
+        return tasksStore.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //use tasksStore[indexPath.row] to get each task
         return UITableViewCell()
     }
 
+    //when you reach the end you can call tasksStore.loadMore()
 }
