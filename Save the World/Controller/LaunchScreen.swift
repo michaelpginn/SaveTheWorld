@@ -17,7 +17,10 @@ class LaunchScreen: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var username: UITextField!
     
     @IBAction func buttonPressed(_ sender: Any) {
-        username.text
+        guard let text = username.text else {return}
+        
+        let api = ApiService()
+        api.signUp(username: text)
         
     }
     
