@@ -9,9 +9,11 @@ target 'Save the World' do
 	pod 'Firebase/Core'
 pod 'Firebase/Firestore'
 
+
   target 'Save the World Tests' do
     inherit! :search_paths
     # Pods for testing
   end
 
+ 1baff73a82164e3a8aa5df63409234d7369f6e6d
 end
