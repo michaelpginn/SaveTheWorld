@@ -14,6 +14,7 @@
 		959EF3BF23232D6F006AA75B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3BE23232D6F006AA75B /* HomeViewController.swift */; };
 		959EF3C123232EEB006AA75B /* WorldGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3C023232EEB006AA75B /* WorldGameViewController.swift */; };
 		959EF3C3232330FC006AA75B /* WorldScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3C2232330FC006AA75B /* WorldScene.swift */; };
+		959EF3C523233836006AA75B /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3C423233836006AA75B /* Sticker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		959EF3BE23232D6F006AA75B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		959EF3C023232EEB006AA75B /* WorldGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldGameViewController.swift; sourceTree = "<group>"; };
 		959EF3C2232330FC006AA75B /* WorldScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldScene.swift; sourceTree = "<group>"; };
+		959EF3C423233836006AA75B /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			children = (
 				959EF3AD2322FB76006AA75B /* Main.storyboard */,
 				959EF3B22322FB79006AA75B /* LaunchScreen.storyboard */,
+				959EF3C423233836006AA75B /* Sticker.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				959EF3C3232330FC006AA75B /* WorldScene.swift in Sources */,
 				959EF3BF23232D6F006AA75B /* HomeViewController.swift in Sources */,
 				959EF3C123232EEB006AA75B /* WorldGameViewController.swift in Sources */,
+				959EF3C523233836006AA75B /* Sticker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,8 +9,26 @@
 import UIKit
 import SpriteKit
 
+enum WorldStage{
+    case brown
+    case blue
+    case greenBlue
+}
+
 class WorldScene: SKScene {
+    var stickers:[Sticker]?
+    var stage:WorldStage?
+    
     override func didMove(to view: SKView) {
         backgroundColor = .clear
+        
+    }
+    
+    func setupPlanet(){
+        
+    }
+    
+    func setupStickers(){
+        
     }
 }
