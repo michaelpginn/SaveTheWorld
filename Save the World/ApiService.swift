@@ -22,7 +22,7 @@ class ApiService: NSObject {
     }
     
     /// Sends the score to the api for the current user
-     func postScore(){
+    func postScore(){
         guard let username = self.username else {return}
         db.collection("users").document(username).setData(["score": score])
     }
@@ -47,13 +47,36 @@ class ApiService: NSObject {
     }
     
     /// Gets non completed tasks for a user
-    func getTasks(completion: @escaping (QuerySnapshot?, Error?) -> Void){
-        db.collection("tasks")
-        .order(by: "score")
-        .limit(to: 10)
-        .getDocuments(completion: completion)
+    func getTasks(start: DocumentSnapshot?, step: Int = 10, completion: @escaping ([Task]?, Error?, DocumentSnapshot?) -> Void){
+        var thisFuckingTaskMan = db.collection("tasks")
+            .order(by: "score")
+            .limit(to: step)
+        
+        if let start = start {
+            thisFuckingTaskMan.start(atDocument: start)
+        }
+        
+        thisFuckingTaskMan.getDocuments { (querySnapshot, error) in
+            if let querySnapshot = querySnapshot {
+                var tasks: [Task] = []
+                var lastDocument: DocumentSnapshot? = nil
+                for task in querySnapshot.documents {
+                    lastDocument = task
+                    var id:String = task.get("id") as! String
+                    var name:String = task.get("name") as! String
+                    var description:String = task.get("description") as! String
+                    var isEveryday:Bool = (task.get("isEveryday") != nil)
+                    
+                    tasks.append(Task(id: id, name: name, description: description, isEveryday: isEveryday))
+                }
+                completion(tasks, error, lastDocument)
+            }
+            else {
+                completion(nil, error, nil)
+            }
+        }
     }
-
+    
     /// Signs up a user with a given username, returns success
     func signUp(username:String, completion: @escaping (Bool)->Void){
         checkUsernameExists(username: username) { (exists) in

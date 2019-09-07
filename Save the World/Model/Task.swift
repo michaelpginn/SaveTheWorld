@@ -10,7 +10,7 @@ import Foundation
 
 struct Task{
     var id:String
-    var title:String
+    var name:String
     var description:String
-    var daily:Bool = false
+    var isEveryday:Bool = false
 }
