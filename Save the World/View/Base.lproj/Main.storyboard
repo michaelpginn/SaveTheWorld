@@ -125,28 +125,6 @@
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-YF-RiA">
                                             <rect key="frame" x="0.0" y="52" width="414" height="782"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <prototypes>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="75" id="qyC-mQ-9Od">
-                                                    <rect key="frame" x="0.0" y="28" width="414" height="75"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qyC-mQ-9Od" id="xhH-Zg-l6T">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="74.5"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y5D-J1-MCi">
-                                                                <rect key="frame" x="12" y="6" width="390" height="62.5"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            </view>
-                                                        </subviews>
-                                                        <constraints>
-                                                            <constraint firstAttribute="trailing" secondItem="y5D-J1-MCi" secondAttribute="trailing" constant="12" id="hBC-1j-eiw"/>
-                                                            <constraint firstAttribute="bottom" secondItem="y5D-J1-MCi" secondAttribute="bottom" constant="6" id="kkH-2R-2Wp"/>
-                                                            <constraint firstItem="y5D-J1-MCi" firstAttribute="leading" secondItem="xhH-Zg-l6T" secondAttribute="leading" constant="12" id="qhl-VQ-s28"/>
-                                                            <constraint firstItem="y5D-J1-MCi" firstAttribute="top" secondItem="xhH-Zg-l6T" secondAttribute="top" constant="6" id="xSb-Xo-KUa"/>
-                                                        </constraints>
-                                                    </tableViewCellContentView>
-                                                </tableViewCell>
-                                            </prototypes>
                                             <connections>
                                                 <outlet property="dataSource" destination="SeZ-bo-wvW" id="4hX-9I-x4e"/>
                                             </connections>
@@ -196,6 +174,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OHA-gm-GSc"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="G6y-YF-RiA" id="mm0-G3-Fpz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B2r-OU-4QO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

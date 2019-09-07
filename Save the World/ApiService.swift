@@ -67,6 +67,7 @@ class ApiService: NSObject {
                     
                     tasks.append(Task(id: id, name: name, description: description, isEveryday: isEveryday))
                 }
+                print(tasks)
                 completion(tasks, error, querySnapshot.documents.last)
             }
             else {

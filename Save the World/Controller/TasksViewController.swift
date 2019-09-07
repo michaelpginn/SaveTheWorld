@@ -14,6 +14,8 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     
     var tasksStore: TasksStore!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,12 +24,19 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         return tasksStore.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //use tasksStore[indexPath.row] to get each task
-        return UITableViewCell()
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "task")
+        
+        let task = tasksStore[indexPath.row]
+        
+        cell.textLabel?.text = task.name
+        cell.detailTextLabel?.text = task.description
+        return cell
     }
 
     //when you reach the end you can call tasksStore.loadMore()
