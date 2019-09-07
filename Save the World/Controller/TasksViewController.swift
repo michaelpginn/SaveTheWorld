@@ -11,17 +11,29 @@ import UIKit
 class TasksViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
-    
+    var persistentStore = PersistentStoreManager()
     var tasksStore: TasksStore!
-    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let longPressRecognize = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress(longPressGestureRecognizer:)))
+        self.view.addGestureRecognizer(longPressRecognize)
+        
+        
         // Do any additional setup after loading the view.
     }
     
+    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer){
+        if longPressGestureRecognizer.state == .began {
+            let touchPoint = longPressGestureRecognizer.location(in: self.view)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint){
+                persistentStore.completeTask(task: tasksStore[indexPath.row])
+                self.dismiss(animated: true)
+            }
+        }
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
