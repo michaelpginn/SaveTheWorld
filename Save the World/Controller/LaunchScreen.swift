@@ -12,6 +12,11 @@ import UIKit
 class LaunchScreen: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         username.delegate = self
+        let bgView = UIImageView(image: UIImage(named: "starsbg"))
+        bgView.frame = view.frame
+        view.addSubview(bgView)
+        view.sendSubviewToBack(bgView)
+        view.contentMode = .scaleAspectFill
     }
     
     @IBOutlet weak var username: UITextField!

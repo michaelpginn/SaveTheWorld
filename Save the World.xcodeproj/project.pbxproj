@@ -11,6 +11,8 @@
 		3972EF8F232376BB00AB442B /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3972EF8E232376BB00AB442B /* LaunchScreen.swift */; };
 		6DC27428B63977DA49EF4B72 /* Pods_Save_the_World.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C893CE14CC8FAE3A11506E /* Pods_Save_the_World.framework */; };
 		6FCD3A658133EE6E41ABD8CF /* Pods_Save_the_World_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC70358EEA42439A59C5E63 /* Pods_Save_the_World_Tests.framework */; };
+		954E2DF7232425B000BBD2E8 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2DF6232425B000BBD2E8 /* TasksViewController.swift */; };
+		954E2DFB23242C1000BBD2E8 /* TasksStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2DFA23242C1000BBD2E8 /* TasksStore.swift */; };
 		9562FB842323F3FA00590407 /* PersistentStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562FB832323F3FA00590407 /* PersistentStoreManager.swift */; };
 		9598AC7E2323DE26004A04BD /* Save_the_World_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */; };
 		9598AC872323EB9C004A04BD /* STWModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */; };
@@ -44,6 +46,8 @@
 		51A9A35BAF0B2DAD5DE674D2 /* Pods-Save the World Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World Tests.debug.xcconfig"; path = "Target Support Files/Pods-Save the World Tests/Pods-Save the World Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		57C893CE14CC8FAE3A11506E /* Pods_Save_the_World.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_the_World.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F2383275F35AD9A0BD3ABA /* Pods-Save the World.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World.debug.xcconfig"; path = "Target Support Files/Pods-Save the World/Pods-Save the World.debug.xcconfig"; sourceTree = "<group>"; };
+		954E2DF6232425B000BBD2E8 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		954E2DFA23242C1000BBD2E8 /* TasksStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksStore.swift; sourceTree = "<group>"; };
 		9562FB832323F3FA00590407 /* PersistentStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStoreManager.swift; sourceTree = "<group>"; };
 		9598AC7B2323DE26004A04BD /* Save the World Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Save the World Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save_the_World_Tests.swift; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			children = (
 				959EF3BE23232D6F006AA75B /* HomeViewController.swift */,
 				959EF3C023232EEB006AA75B /* WorldGameViewController.swift */,
+				954E2DF6232425B000BBD2E8 /* TasksViewController.swift */,
 				959EF3C2232330FC006AA75B /* WorldScene.swift */,
 				3972EF8E232376BB00AB442B /* LaunchScreen.swift */,
 			);
@@ -178,6 +183,7 @@
 				959EF3CB232377B4006AA75B /* Task.swift */,
 				9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */,
 				9562FB832323F3FA00590407 /* PersistentStoreManager.swift */,
+				954E2DFA23242C1000BBD2E8 /* TasksStore.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -364,6 +370,8 @@
 				959EF3C3232330FC006AA75B /* WorldScene.swift in Sources */,
 				3972EF8F232376BB00AB442B /* LaunchScreen.swift in Sources */,
 				959EF3C723237655006AA75B /* ApiService.swift in Sources */,
+				954E2DFB23242C1000BBD2E8 /* TasksStore.swift in Sources */,
+				954E2DF7232425B000BBD2E8 /* TasksViewController.swift in Sources */,
 				959EF3BF23232D6F006AA75B /* HomeViewController.swift in Sources */,
 				9598AC872323EB9C004A04BD /* STWModel.xcdatamodeld in Sources */,
 				959EF3C9232376F0006AA75B /* Action.swift in Sources */,
