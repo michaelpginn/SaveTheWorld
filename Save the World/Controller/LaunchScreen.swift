@@ -20,9 +20,15 @@ class LaunchScreen: UIViewController, UITextFieldDelegate {
         guard let text = username.text else {return}
         
         let api = ApiService()
+<<<<<<< HEAD
+//        api.signUp(username: text, completion: { success in
+//            
+//        })
+=======
         api.signUp(username: text, completion: { success in
             
         })
+>>>>>>> 1baff73a82164e3a8aa5df63409234d7369f6e6d
         
     }
     

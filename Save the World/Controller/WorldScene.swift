@@ -43,6 +43,10 @@ class WorldScene: SKScene {
         world.strokeColor = WorldStage.color(stage:stage)
         world.glowWidth = 5
         addChild(world)
+        if(stage == .greenBlue){
+            let continent = SKSpriteNode(texture: SKTexture(imageNamed: "geography"))
+            world.addChild(continent)
+        }
     }
     
     func setupStickers(){
