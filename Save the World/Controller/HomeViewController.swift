@@ -11,6 +11,7 @@ import UIKit
 class HomeViewController: UIViewController {
     let defaults = UserDefaults.standard
     let tasksStore = TasksStore()
+    let persistentStoreManager = PersistentStoreManager()
     @IBOutlet weak var usernameLabel: UILabel!
     
     override func viewDidLoad() {
@@ -26,11 +27,11 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         //check for first login
-        if(defaults.string(forKey: "username") == nil){
+        if(persistentStoreManager.username == nil){
             self.performSegue(withIdentifier: "showSignup", sender: self)
         }
         else {
-            self.usernameLabel.text = defaults.string(forKey: "username")
+            self.usernameLabel.text = persistentStoreManager.username
         }
     }
     
