@@ -63,20 +63,52 @@
             </objects>
             <point key="canvasLocation" x="141" y="-96"/>
         </scene>
-        <!--View Controller-->
+        <!--Launch Screen-->
         <scene sceneID="mgg-5x-N03">
             <objects>
-                <viewController id="Od2-pC-ulT" sceneMemberID="viewController">
+                <viewController id="Od2-pC-ulT" customClass="LaunchScreen" customModule="Save_the_World" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eLH-0D-ayc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="user:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHI-Dn-oS5">
+                                <rect key="frame" x="46" y="275" width="121" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOe-ja-lcM">
+                                <rect key="frame" x="46" y="335" width="239" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="yr1-hv-zIe" eventType="editingDidEnd" id="Nhf-WY-1xf"/>
+                                    <action selector="enterUser:" destination="yr1-hv-zIe" eventType="editingDidEnd" id="uF1-4d-S4w"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwg-0a-Ec9">
+                                <rect key="frame" x="308" y="342" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="buttonPressed:" destination="Od2-pC-ulT" eventType="touchUpInside" id="bho-df-jDp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98039215686274506" green="0.80784313725490198" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="Fiq-L2-xkx"/>
                     </view>
+                    <connections>
+                        <outlet property="username" destination="HOe-ja-lcM" id="TQw-6X-GeN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEa-bP-ScP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yr1-hv-zIe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="142" y="649"/>
+            <point key="canvasLocation" x="140.57971014492756" y="648.88392857142856"/>
         </scene>
         <!--World Game View Controller-->
         <scene sceneID="iLl-AR-g00">

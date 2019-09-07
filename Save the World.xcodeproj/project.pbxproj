@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3972EF8D2323648600AB442B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3972EF8C2323648600AB442B /* GoogleService-Info.plist */; };
+		3972EF8F232376BB00AB442B /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3972EF8E232376BB00AB442B /* LaunchScreen.swift */; };
 		85904968156C7D975D259FB4 /* Pods_Save_the_World.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1697CFC4C939175029FA5B6 /* Pods_Save_the_World.framework */; };
 		9598AC7E2323DE26004A04BD /* Save_the_World_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */; };
 		959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3A72322FB76006AA75B /* AppDelegate.swift */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		3972EF8C2323648600AB442B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3972EF8E232376BB00AB442B /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		5751E91413B6F9026B64F673 /* Pods-Save the World.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World.release.xcconfig"; path = "Target Support Files/Pods-Save the World/Pods-Save the World.release.xcconfig"; sourceTree = "<group>"; };
 		9598AC7B2323DE26004A04BD /* Save the World Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Save the World Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save_the_World_Tests.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				959EF3BE23232D6F006AA75B /* HomeViewController.swift */,
 				959EF3C023232EEB006AA75B /* WorldGameViewController.swift */,
 				959EF3C2232330FC006AA75B /* WorldScene.swift */,
+				3972EF8E232376BB00AB442B /* LaunchScreen.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				959EF3CC232377B4006AA75B /* Task.swift in Sources */,
 				959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */,
 				959EF3C3232330FC006AA75B /* WorldScene.swift in Sources */,
+				3972EF8F232376BB00AB442B /* LaunchScreen.swift in Sources */,
 				959EF3C723237655006AA75B /* ApiService.swift in Sources */,
 				959EF3BF23232D6F006AA75B /* HomeViewController.swift in Sources */,
 				959EF3C9232376F0006AA75B /* Action.swift in Sources */,
