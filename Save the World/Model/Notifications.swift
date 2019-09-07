@@ -11,4 +11,5 @@ import Foundation
 extension Notification.Name{
     static let TasksLoaded = NSNotification.Name("tasks_loaded")
     static let TaskCompleted = NSNotification.Name("task_completed")
+    static let LevelUp = NSNotification.Name("level_up")
 }

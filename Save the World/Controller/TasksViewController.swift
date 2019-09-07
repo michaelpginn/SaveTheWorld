@@ -12,6 +12,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var persistentStore = PersistentStoreManager()
+    var scoreManager = ScoreManager()
     var tasksStore: TasksStore!
     var api = ApiService()
     
@@ -32,7 +33,8 @@ class TasksViewController: UIViewController, UITableViewDataSource {
                 let task = tasksStore[indexPath.row]
                 persistentStore.completeTask(task: task)
                 api.postAction(action: Action(username: api.username!, description: "completed a task", taskId: task.id, dateTime: Date()))
-                
+                scoreManager.addPoints(points: tasksStore[indexPath.row].points)
+                NotificationCenter.default.post(name: .TaskCompleted, object: nil)
                 self.dismiss(animated: true)
             }
         }

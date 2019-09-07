@@ -16,9 +16,12 @@
 		954E2DFF23243EF800BBD2E8 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2DFE23243EF800BBD2E8 /* Notifications.swift */; };
 		954E2E01232440DB00BBD2E8 /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E00232440DB00BBD2E8 /* FriendsViewController.swift */; };
 		954E2E03232444C700BBD2E8 /* UIAlertController+QuickAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E02232444C700BBD2E8 /* UIAlertController+QuickAlert.swift */; };
+		954E2E142324586500BBD2E8 /* CompletedTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E0D232454E400BBD2E8 /* CompletedTask+CoreDataProperties.swift */; };
+		954E2E152324586700BBD2E8 /* CompletedTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E0F232454E400BBD2E8 /* CompletedTask+CoreDataClass.swift */; };
+		954E2E1623245A0D00BBD2E8 /* STWModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */; };
+		954E2E1823245CCC00BBD2E8 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E1723245CCC00BBD2E8 /* ScoreManager.swift */; };
 		9562FB842323F3FA00590407 /* PersistentStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562FB832323F3FA00590407 /* PersistentStoreManager.swift */; };
 		9598AC7E2323DE26004A04BD /* Save_the_World_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */; };
-		9598AC872323EB9C004A04BD /* STWModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */; };
 		959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3A72322FB76006AA75B /* AppDelegate.swift */; };
 		959EF3AF2322FB76006AA75B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959EF3AD2322FB76006AA75B /* Main.storyboard */; };
 		959EF3B12322FB79006AA75B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959EF3B02322FB79006AA75B /* Assets.xcassets */; };
@@ -54,6 +57,11 @@
 		954E2DFE23243EF800BBD2E8 /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		954E2E00232440DB00BBD2E8 /* FriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
 		954E2E02232444C700BBD2E8 /* UIAlertController+QuickAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+QuickAlert.swift"; sourceTree = "<group>"; };
+		954E2E0C232454E300BBD2E8 /* StickerPlacement+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StickerPlacement+CoreDataClass.swift"; sourceTree = "<group>"; };
+		954E2E0D232454E400BBD2E8 /* CompletedTask+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CompletedTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		954E2E0E232454E400BBD2E8 /* StickerPlacement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StickerPlacement+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		954E2E0F232454E400BBD2E8 /* CompletedTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CompletedTask+CoreDataClass.swift"; sourceTree = "<group>"; };
+		954E2E1723245CCC00BBD2E8 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		9562FB832323F3FA00590407 /* PersistentStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStoreManager.swift; sourceTree = "<group>"; };
 		9598AC7B2323DE26004A04BD /* Save the World Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Save the World Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save_the_World_Tests.swift; sourceTree = "<group>"; };
@@ -151,6 +159,8 @@
 				3972EF8C2323648600AB442B /* GoogleService-Info.plist */,
 				959EF3A72322FB76006AA75B /* AppDelegate.swift */,
 				959EF3C623237655006AA75B /* ApiService.swift */,
+				954E2E1723245CCC00BBD2E8 /* ScoreManager.swift */,
+				9562FB832323F3FA00590407 /* PersistentStoreManager.swift */,
 				959EF3CA232376F4006AA75B /* Model */,
 				959EF3BC23232C73006AA75B /* View */,
 				959EF3BD23232C7C006AA75B /* Controller */,
@@ -187,10 +197,13 @@
 		959EF3CA232376F4006AA75B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				954E2E0F232454E400BBD2E8 /* CompletedTask+CoreDataClass.swift */,
+				954E2E0D232454E400BBD2E8 /* CompletedTask+CoreDataProperties.swift */,
+				954E2E0C232454E300BBD2E8 /* StickerPlacement+CoreDataClass.swift */,
+				954E2E0E232454E400BBD2E8 /* StickerPlacement+CoreDataProperties.swift */,
 				959EF3C8232376F0006AA75B /* Action.swift */,
 				959EF3CB232377B4006AA75B /* Task.swift */,
 				9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */,
-				9562FB832323F3FA00590407 /* PersistentStoreManager.swift */,
 				954E2DFA23242C1000BBD2E8 /* TasksStore.swift */,
 				954E2DFE23243EF800BBD2E8 /* Notifications.swift */,
 			);
@@ -375,20 +388,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				959EF3CC232377B4006AA75B /* Task.swift in Sources */,
+				954E2E1823245CCC00BBD2E8 /* ScoreManager.swift in Sources */,
 				954E2E01232440DB00BBD2E8 /* FriendsViewController.swift in Sources */,
+				954E2E152324586700BBD2E8 /* CompletedTask+CoreDataClass.swift in Sources */,
 				959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */,
 				959EF3C3232330FC006AA75B /* WorldScene.swift in Sources */,
 				3972EF8F232376BB00AB442B /* LaunchScreen.swift in Sources */,
 				959EF3C723237655006AA75B /* ApiService.swift in Sources */,
 				954E2DFB23242C1000BBD2E8 /* TasksStore.swift in Sources */,
+				954E2E142324586500BBD2E8 /* CompletedTask+CoreDataProperties.swift in Sources */,
 				954E2DF7232425B000BBD2E8 /* TasksViewController.swift in Sources */,
 				959EF3BF23232D6F006AA75B /* HomeViewController.swift in Sources */,
 				954E2DFF23243EF800BBD2E8 /* Notifications.swift in Sources */,
-				9598AC872323EB9C004A04BD /* STWModel.xcdatamodeld in Sources */,
 				954E2E03232444C700BBD2E8 /* UIAlertController+QuickAlert.swift in Sources */,
 				959EF3C9232376F0006AA75B /* Action.swift in Sources */,
 				959EF3C123232EEB006AA75B /* WorldGameViewController.swift in Sources */,
 				959EF3C523233836006AA75B /* Sticker.swift in Sources */,
+				954E2E1623245A0D00BBD2E8 /* STWModel.xcdatamodeld in Sources */,
 				9562FB842323F3FA00590407 /* PersistentStoreManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
