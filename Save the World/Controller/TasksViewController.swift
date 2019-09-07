@@ -11,6 +11,7 @@ import UIKit
 class TasksViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
+    
     var tasksStore: TasksStore!
     
     override func viewDidLoad() {
@@ -30,4 +31,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     }
 
     //when you reach the end you can call tasksStore.loadMore()
+    @IBAction func quit(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

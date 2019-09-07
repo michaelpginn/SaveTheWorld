@@ -17,6 +17,7 @@ class HomeViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         let bgView = UIImageView(image: UIImage(named: "starsbg"))
+        bgView.frame = view.frame
         view.addSubview(bgView)
         view.sendSubviewToBack(bgView)
         view.contentMode = .scaleAspectFill

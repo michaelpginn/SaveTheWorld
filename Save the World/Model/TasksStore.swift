@@ -12,7 +12,7 @@ class TasksStore: NSObject {
     private var tasks: [Task] = []
     private var offset = 0
     var gotAll = false
-    private var api = ApiService()
+    lazy private var api = ApiService()
     
     /// Loads another 10 items from the api
     func loadMore(){
