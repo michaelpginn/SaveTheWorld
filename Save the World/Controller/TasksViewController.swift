@@ -9,6 +9,8 @@
 import UIKit
 
 class TasksViewController: UIViewController, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
     var tasks:[Task] = []
     
     override func viewDidLoad() {
