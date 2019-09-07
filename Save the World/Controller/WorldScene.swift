@@ -14,14 +14,21 @@ enum WorldStage{
     case blue
     case greenBlue
     
-    func color(stage:WorldStage){
-        
+    static func color(stage:WorldStage)->UIColor{
+        switch(stage){
+        case .brown:
+            return .brown
+        case .blue:
+            return .blue
+        case .greenBlue:
+            return .green
+        }
     }
 }
 
 class WorldScene: SKScene {
     var stickers:[Sticker]?
-    var stage:WorldStage?
+    var stage:WorldStage = .blue
     
     override func didMove(to view: SKView) {
         backgroundColor = .clear
@@ -31,8 +38,10 @@ class WorldScene: SKScene {
     
     func setupWorld() {
         let world = SKShapeNode(circleOfRadius: 100)
-        world.fillColor = .brown
-        world.glowWidth = 0.3
+        world.fillColor = WorldStage.color(stage:stage)
+        world.strokeColor = WorldStage.color(stage:stage)
+        world.glowWidth = 10
+        
         self.addChild(world)
     }
     
