@@ -225,37 +225,43 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="846"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-YF-RiA">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-YF-RiA">
                                             <rect key="frame" x="0.0" y="52" width="414" height="786"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <prototypes>
                                                 <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="protoCell" rowHeight="92" id="JhH-BW-6ga">
                                                     <rect key="frame" x="0.0" y="28" width="414" height="92"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JhH-BW-6ga" id="pfS-Bs-vgF">
+                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JhH-BW-6ga" id="pfS-Bs-vgF">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="91.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-Of-SGb">
-                                                                <rect key="frame" x="19.44655962923548" y="8.0611058529723323" width="374.00000000000017" height="77.000000000000057"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-Of-SGb">
+                                                                <rect key="frame" x="16" y="8.5" width="382" height="90"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-Ac-HVP">
-                                                                        <rect key="frame" x="8" y="8" width="97" height="33"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-Ac-HVP">
+                                                                        <rect key="frame" x="8" y="15.5" width="366" height="19"/>
+                                                                        <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="19"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHz-zI-fJl">
-                                                                        <rect key="frame" x="8" y="36" width="366" height="41"/>
-                                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHz-zI-fJl">
+                                                                        <rect key="frame" x="8" y="42.5" width="366" height="16"/>
+                                                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="90" id="G61-ov-h6y"/>
+                                                                    <constraint firstItem="zHz-zI-fJl" firstAttribute="leading" secondItem="OdF-Of-SGb" secondAttribute="leading" constant="8" id="Ppv-a6-tdX"/>
+                                                                    <constraint firstItem="SKt-Ac-HVP" firstAttribute="centerY" secondItem="OdF-Of-SGb" secondAttribute="centerY" constant="-20" id="bhQ-0R-3MB"/>
+                                                                    <constraint firstItem="SKt-Ac-HVP" firstAttribute="leading" secondItem="OdF-Of-SGb" secondAttribute="leading" constant="8" id="fvj-BP-KD8"/>
+                                                                    <constraint firstItem="zHz-zI-fJl" firstAttribute="top" secondItem="SKt-Ac-HVP" secondAttribute="bottom" constant="8" id="jvR-dI-fc4"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="zHz-zI-fJl" secondAttribute="trailing" constant="8" id="kTT-3q-tEZ"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="SKt-Ac-HVP" secondAttribute="trailing" constant="8" id="oyO-7A-kR7"/>
+                                                                </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                                         <integer key="value" value="5"/>
@@ -263,7 +269,14 @@
                                                                 </userDefinedRuntimeAttributes>
                                                             </view>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="OdF-Of-SGb" secondAttribute="bottom" constant="8" id="4l5-73-L0t"/>
+                                                            <constraint firstItem="OdF-Of-SGb" firstAttribute="leading" secondItem="pfS-Bs-vgF" secondAttribute="leading" constant="16" id="e5R-yG-yoA"/>
+                                                            <constraint firstAttribute="trailing" secondItem="OdF-Of-SGb" secondAttribute="trailing" constant="16" id="tn6-wP-1C4"/>
+                                                            <constraint firstItem="OdF-Of-SGb" firstAttribute="top" secondItem="pfS-Bs-vgF" secondAttribute="top" constant="8" id="vUl-yp-vCp"/>
+                                                        </constraints>
                                                     </tableViewCellContentView>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </tableViewCell>
                                             </prototypes>
                                             <connections>
