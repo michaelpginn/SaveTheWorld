@@ -36,36 +36,61 @@
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-QK-oy4">
-                                <rect key="frame" x="0.0" y="144" width="414" height="618"/>
+                                <rect key="frame" x="0.0" y="144" width="414" height="666"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="HD8-9o-weL" kind="embed" id="Wwl-UE-2o6"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dF6-3a-uX1">
-                                <rect key="frame" x="0.0" y="762" width="414" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="t1x-r6-vHR"/>
-                                </constraints>
-                                <state key="normal" title="Show taks"/>
-                                <connections>
-                                    <segue destination="SeZ-bo-wvW" kind="presentation" identifier="showTasks" modalPresentationStyle="overCurrentContext" id="6Fu-Wo-ytH"/>
-                                </connections>
-                            </button>
+                            <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GKH-ex-KiI">
+                                <rect key="frame" x="0.0" y="810" width="414" height="96"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xW1-bd-WBf">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="96"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dF6-3a-uX1">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="52"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="52" id="t1x-r6-vHR"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="25"/>
+                                            <state key="normal" title="Tasks">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <segue destination="SeZ-bo-wvW" kind="presentation" identifier="showTasks" modalPresentationStyle="overCurrentContext" id="6Fu-Wo-ytH"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="dF6-3a-uX1" firstAttribute="leading" secondItem="xW1-bd-WBf" secondAttribute="leading" id="1xP-vd-Z78"/>
+                                        <constraint firstAttribute="trailing" secondItem="dF6-3a-uX1" secondAttribute="trailing" id="6Bi-XH-UUI"/>
+                                        <constraint firstItem="dF6-3a-uX1" firstAttribute="centerX" secondItem="xW1-bd-WBf" secondAttribute="centerX" id="Ffx-PO-YUi"/>
+                                        <constraint firstItem="dF6-3a-uX1" firstAttribute="top" secondItem="xW1-bd-WBf" secondAttribute="top" id="XG5-an-Sag"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="3X8-RO-WD1" firstAttribute="trailing" secondItem="psh-ih-H6l" secondAttribute="trailing" id="0UL-Nh-RoP"/>
                             <constraint firstItem="3X8-RO-WD1" firstAttribute="top" secondItem="psh-ih-H6l" secondAttribute="top" id="1m9-Av-Wsi"/>
-                            <constraint firstItem="psh-ih-H6l" firstAttribute="bottom" secondItem="dF6-3a-uX1" secondAttribute="bottom" id="2tR-wz-obI"/>
                             <constraint firstItem="3X8-RO-WD1" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="7Qf-w6-VhS"/>
-                            <constraint firstItem="dF6-3a-uX1" firstAttribute="trailing" secondItem="psh-ih-H6l" secondAttribute="trailing" id="9OZ-p1-JtJ"/>
-                            <constraint firstItem="dF6-3a-uX1" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="Cnm-9z-0SY"/>
+                            <constraint firstItem="GKH-ex-KiI" firstAttribute="top" secondItem="wTo-QK-oy4" secondAttribute="bottom" id="IU2-dp-Ct5"/>
+                            <constraint firstItem="GKH-ex-KiI" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="g8w-oc-VYl"/>
                             <constraint firstItem="psh-ih-H6l" firstAttribute="trailing" secondItem="wTo-QK-oy4" secondAttribute="trailing" id="hDQ-mH-x1k"/>
-                            <constraint firstItem="dF6-3a-uX1" firstAttribute="top" secondItem="wTo-QK-oy4" secondAttribute="bottom" id="hDo-vq-250"/>
                             <constraint firstItem="wTo-QK-oy4" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="pDN-um-KrQ"/>
+                            <constraint firstItem="psh-ih-H6l" firstAttribute="trailing" secondItem="GKH-ex-KiI" secondAttribute="trailing" id="sAP-uU-qdx"/>
+                            <constraint firstItem="dF6-3a-uX1" firstAttribute="bottom" secondItem="psh-ih-H6l" secondAttribute="bottom" id="vsb-ym-c2R"/>
                             <constraint firstItem="wTo-QK-oy4" firstAttribute="top" secondItem="3X8-RO-WD1" secondAttribute="bottom" id="waN-sw-HF1"/>
+                            <constraint firstAttribute="bottom" secondItem="GKH-ex-KiI" secondAttribute="bottom" constant="-10" id="xiL-8F-UbP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="psh-ih-H6l"/>
                     </view>
@@ -265,11 +290,11 @@ username</string>
             <objects>
                 <viewController id="HD8-9o-weL" customClass="WorldGameViewController" customModule="Save_the_World" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Iv3-ld-QUZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-Nb-JSb">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="666"/>
                             </skView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
