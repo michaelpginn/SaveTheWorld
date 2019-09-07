@@ -17,8 +17,8 @@ class WorldGameViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .clear
-        gameView.showsFPS = true
-        gameView.showsNodeCount = true
+//        gameView.showsFPS = true
+//        gameView.showsNodeCount = true
         gameView.ignoresSiblingOrder = true
         gameView.allowsTransparency = true
         let scene = WorldScene()

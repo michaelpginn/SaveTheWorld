@@ -89,19 +89,11 @@
 				3972EF8C2323648600AB442B /* GoogleService-Info.plist */,
 				959EF3A72322FB76006AA75B /* AppDelegate.swift */,
 				959EF3BD23232C7C006AA75B /* Controller */,
-				959EF3BB23232C64006AA75B /* Model */,
 				959EF3BC23232C73006AA75B /* View */,
 				959EF3B02322FB79006AA75B /* Assets.xcassets */,
 				959EF3B52322FB79006AA75B /* Info.plist */,
 			);
 			path = "Save the World";
-			sourceTree = "<group>";
-		};
-		959EF3BB23232C64006AA75B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		959EF3BC23232C73006AA75B /* View */ = {
