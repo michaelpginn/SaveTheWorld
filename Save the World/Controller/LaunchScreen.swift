@@ -20,12 +20,20 @@ class LaunchScreen: UIViewController, UITextFieldDelegate {
         guard let text = username.text else {return}
         
         let api = ApiService()
-
         
-        api.signUp(username: text, error: {
-            let alert = UIAlertController(title: "Username taken", message:  "HAHA SUX 4 U. That name is already taken. SUX 2 SUX", preferredStyle: .alert)
-            
-            self.present(alert, animated: true)
+        
+        api.signUp(username: text, completion: { (success) in
+            if success {
+//                call uhhh what did i
+                PersistentStoreManager().username = text
+                self.dismiss(animated: true)
+            }
+            else {
+                let alert = UIAlertController(title: "Username taken", message:  "HAHA SUX 4 U. That name is already taken. SUX 2 SUX", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: ":(", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
         })
         
     }
@@ -38,8 +46,8 @@ class LaunchScreen: UIViewController, UITextFieldDelegate {
     }
     
     
-
-        
+    
+    
     
     
     

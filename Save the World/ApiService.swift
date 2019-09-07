@@ -55,14 +55,14 @@ class ApiService: NSObject {
     }
 
     /// Signs up a user with a given username, returns success
-    func signUp(username:String, error: @escaping ()->Void = {}){
+    func signUp(username:String, completion: @escaping (Bool)->Void){
         checkUsernameExists(username: username) { (exists) in
             if !exists{
                 self.db.collection("users").document(username).setData(["username": username, "score":0])
+                completion(true)
             }
             else {
-                error()
-            }
+                completion(false)            }
         }
     }
 }
