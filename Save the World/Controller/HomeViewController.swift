@@ -26,6 +26,8 @@ class HomeViewController: UIViewController {
         view.contentMode = .scaleAspectFill
         
         tasksStore.loadMore()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadScore), name: .TaskCompleted, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -37,6 +39,10 @@ class HomeViewController: UIViewController {
             self.usernameLabel.text = "\(persistentStoreManager.username ?? "")'s world"
             self.scoreLabel.text = "Score: \(persistentStoreManager.score)"
         }
+    }
+    
+    @objc func reloadScore(){
+        self.scoreLabel.text = "Score: \(persistentStoreManager.score)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

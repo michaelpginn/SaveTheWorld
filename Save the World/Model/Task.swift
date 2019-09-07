@@ -13,4 +13,5 @@ struct Task{
     var name:String
     var description:String
     var isEveryday:Bool = false
+    var points:Int = 0
 }

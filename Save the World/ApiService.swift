@@ -64,10 +64,10 @@ class ApiService: NSObject {
                     let name:String = task.get("name") as? String ?? ""
                     let description:String = task.get("description") as? String ?? ""
                     let isEveryday:Bool = task.get("isEveryday") as? Bool ?? false
-                    
-                    tasks.append(Task(id: id, name: name, description: description, isEveryday: isEveryday))
+                    let points = task.get("points") as? Int ?? 0
+                    tasks.append(Task(id: id, name: name, description: description, isEveryday: isEveryday, points:points))
                 }
-                print(tasks)
+                
                 completion(tasks, error, querySnapshot.documents.last)
             }
             else {

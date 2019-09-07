@@ -12,6 +12,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     var persistentStore = PersistentStoreManager()
+    var scoreManager = ScoreManager()
     var tasksStore: TasksStore!
     
     
@@ -30,6 +31,8 @@ class TasksViewController: UIViewController, UITableViewDataSource {
             let touchPoint = longPressGestureRecognizer.location(in: self.view)
             if let indexPath = tableView.indexPathForRow(at: touchPoint){
                 persistentStore.completeTask(task: tasksStore[indexPath.row])
+                scoreManager.addPoints(points: tasksStore[indexPath.row].points)
+                NotificationCenter.default.post(name: .TaskCompleted, object: nil)
                 self.dismiss(animated: true)
             }
         }
