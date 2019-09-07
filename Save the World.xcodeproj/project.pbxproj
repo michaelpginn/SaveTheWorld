@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3972EF8D2323648600AB442B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3972EF8C2323648600AB442B /* GoogleService-Info.plist */; };
 		85904968156C7D975D259FB4 /* Pods_Save_the_World.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1697CFC4C939175029FA5B6 /* Pods_Save_the_World.framework */; };
+		9598AC7E2323DE26004A04BD /* Save_the_World_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */; };
 		959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3A72322FB76006AA75B /* AppDelegate.swift */; };
 		959EF3AF2322FB76006AA75B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959EF3AD2322FB76006AA75B /* Main.storyboard */; };
 		959EF3B12322FB79006AA75B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959EF3B02322FB79006AA75B /* Assets.xcassets */; };
@@ -22,9 +23,22 @@
 		959EF3CC232377B4006AA75B /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3CB232377B4006AA75B /* Task.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9598AC802323DE26004A04BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 959EF39C2322FB76006AA75B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 959EF3A32322FB76006AA75B;
+			remoteInfo = "Save the World";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3972EF8C2323648600AB442B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5751E91413B6F9026B64F673 /* Pods-Save the World.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World.release.xcconfig"; path = "Target Support Files/Pods-Save the World/Pods-Save the World.release.xcconfig"; sourceTree = "<group>"; };
+		9598AC7B2323DE26004A04BD /* Save the World Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Save the World Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save_the_World_Tests.swift; sourceTree = "<group>"; };
+		9598AC7F2323DE26004A04BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		959EF3A42322FB76006AA75B /* Save the World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save the World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959EF3A72322FB76006AA75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959EF3AE2322FB76006AA75B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +57,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9598AC782323DE26004A04BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		959EF3A12322FB76006AA75B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -71,10 +92,20 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9598AC7C2323DE26004A04BD /* Save the World Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */,
+				9598AC7F2323DE26004A04BD /* Info.plist */,
+			);
+			path = "Save the World Tests";
+			sourceTree = "<group>";
+		};
 		959EF39B2322FB76006AA75B = {
 			isa = PBXGroup;
 			children = (
 				959EF3A62322FB76006AA75B /* Save the World */,
+				9598AC7C2323DE26004A04BD /* Save the World Tests */,
 				959EF3A52322FB76006AA75B /* Products */,
 				7387067BAEC393CD38F705A8 /* Pods */,
 				36888E8C9A95B30A07D81BA2 /* Frameworks */,
@@ -85,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				959EF3A42322FB76006AA75B /* Save the World.app */,
+				9598AC7B2323DE26004A04BD /* Save the World Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -136,6 +168,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9598AC7A2323DE26004A04BD /* Save the World Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9598AC842323DE26004A04BD /* Build configuration list for PBXNativeTarget "Save the World Tests" */;
+			buildPhases = (
+				9598AC772323DE26004A04BD /* Sources */,
+				9598AC782323DE26004A04BD /* Frameworks */,
+				9598AC792323DE26004A04BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9598AC812323DE26004A04BD /* PBXTargetDependency */,
+			);
+			name = "Save the World Tests";
+			productName = "Save the World Tests";
+			productReference = 9598AC7B2323DE26004A04BD /* Save the World Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		959EF3A32322FB76006AA75B /* Save the World */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 959EF3B82322FB79006AA75B /* Build configuration list for PBXNativeTarget "Save the World" */;
@@ -165,6 +215,10 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Michael Ginn";
 				TargetAttributes = {
+					9598AC7A2323DE26004A04BD = {
+						CreatedOnToolsVersion = 10.3;
+						TestTargetID = 959EF3A32322FB76006AA75B;
+					};
 					959EF3A32322FB76006AA75B = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -184,11 +238,19 @@
 			projectRoot = "";
 			targets = (
 				959EF3A32322FB76006AA75B /* Save the World */,
+				9598AC7A2323DE26004A04BD /* Save the World Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9598AC792323DE26004A04BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		959EF3A22322FB76006AA75B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -245,6 +307,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9598AC772323DE26004A04BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9598AC7E2323DE26004A04BD /* Save_the_World_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		959EF3A02322FB76006AA75B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -261,6 +331,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9598AC812323DE26004A04BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 959EF3A32322FB76006AA75B /* Save the World */;
+			targetProxy = 9598AC802323DE26004A04BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		959EF3AD2322FB76006AA75B /* Main.storyboard */ = {
@@ -282,6 +360,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9598AC822323DE26004A04BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9GVS3YU4CR;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
+				INFOPLIST_FILE = "Save the World Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelginn.Save-the-World-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Save the World.app/Save the World";
+			};
+			name = Debug;
+		};
+		9598AC832323DE26004A04BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9GVS3YU4CR;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/**";
+				INFOPLIST_FILE = "Save the World Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.michaelginn.Save-the-World-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Save the World.app/Save the World";
+			};
+			name = Release;
+		};
 		959EF3B62322FB79006AA75B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -441,6 +561,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9598AC842323DE26004A04BD /* Build configuration list for PBXNativeTarget "Save the World Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9598AC822323DE26004A04BD /* Debug */,
+				9598AC832323DE26004A04BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		959EF39F2322FB76006AA75B /* Build configuration list for PBXProject "Save the World" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
