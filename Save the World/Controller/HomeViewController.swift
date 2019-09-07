@@ -9,6 +9,7 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    let defaults = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +19,15 @@ class HomeViewController: UIViewController {
         view.addSubview(bgView)
         view.sendSubviewToBack(bgView)
         view.contentMode = .scaleAspectFill
+        
+            }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //check for first login
+        if(defaults.string(forKey: "username") == nil){
+            self.performSegue(withIdentifier: "showSignup", sender: self)
+        }
+
     }
     
 
