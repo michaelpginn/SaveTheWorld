@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import SpriteKit
 
 class WorldGameViewController: UIViewController {
+    @IBOutlet var gameView: SKView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        gameView.showsFPS = true
+        gameView.showsNodeCount = true
+        gameView.ignoresSiblingOrder = true
+        let scene = SKScene()
+        scene.scaleMode = .resizeFill
+        gameView.presentScene(scene)
     }
     
 

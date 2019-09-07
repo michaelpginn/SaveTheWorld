@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0i2-L1-0Zu">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,9 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wrb-Hx-n7N">
-                                <rect key="frame" x="0.0" y="152" width="414" height="602"/>
-                            </skView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3X8-RO-WD1">
                                 <rect key="frame" x="0.0" y="44" width="414" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -35,19 +32,25 @@
                                     <constraint firstAttribute="height" constant="100" id="MpQ-I3-onw"/>
                                 </constraints>
                             </view>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-QK-oy4">
+                                <rect key="frame" x="0.0" y="144" width="414" height="618"/>
+                                <connections>
+                                    <segue destination="HD8-9o-weL" kind="embed" id="Wwl-UE-2o6"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="3X8-RO-WD1" firstAttribute="trailing" secondItem="psh-ih-H6l" secondAttribute="trailing" id="0UL-Nh-RoP"/>
                             <constraint firstItem="3X8-RO-WD1" firstAttribute="top" secondItem="psh-ih-H6l" secondAttribute="top" id="1m9-Av-Wsi"/>
-                            <constraint firstItem="Wrb-Hx-n7N" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="2tS-lQ-2Q9"/>
                             <constraint firstItem="3X8-RO-WD1" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="7Qf-w6-VhS"/>
-                            <constraint firstItem="oI3-L3-ES0" firstAttribute="top" secondItem="Wrb-Hx-n7N" secondAttribute="bottom" constant="8" id="JHd-kH-vJo"/>
+                            <constraint firstItem="oI3-L3-ES0" firstAttribute="top" secondItem="wTo-QK-oy4" secondAttribute="bottom" id="Nqn-gh-kl3"/>
                             <constraint firstItem="oI3-L3-ES0" firstAttribute="bottom" secondItem="psh-ih-H6l" secondAttribute="bottom" id="Rpx-g2-3tW"/>
-                            <constraint firstItem="Wrb-Hx-n7N" firstAttribute="top" secondItem="3X8-RO-WD1" secondAttribute="bottom" constant="8" id="YQT-eP-YMc"/>
                             <constraint firstItem="oI3-L3-ES0" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="f7d-Wk-ZK8"/>
+                            <constraint firstItem="psh-ih-H6l" firstAttribute="trailing" secondItem="wTo-QK-oy4" secondAttribute="trailing" id="hDQ-mH-x1k"/>
+                            <constraint firstItem="wTo-QK-oy4" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="pDN-um-KrQ"/>
                             <constraint firstItem="oI3-L3-ES0" firstAttribute="trailing" secondItem="psh-ih-H6l" secondAttribute="trailing" id="q32-Ji-XgC"/>
-                            <constraint firstItem="Wrb-Hx-n7N" firstAttribute="trailing" secondItem="psh-ih-H6l" secondAttribute="trailing" id="t2w-G3-CQb"/>
+                            <constraint firstItem="wTo-QK-oy4" firstAttribute="top" secondItem="3X8-RO-WD1" secondAttribute="bottom" id="waN-sw-HF1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="psh-ih-H6l"/>
                     </view>
@@ -56,9 +59,8 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vg9-h2-WKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <customObject id="EKF-QT-wvp"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="-27.455357142857142"/>
+            <point key="canvasLocation" x="141" y="-96"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mgg-5x-N03">
@@ -74,6 +76,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEa-bP-ScP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="142" y="649"/>
+        </scene>
+        <!--World Game View Controller-->
+        <scene sceneID="iLl-AR-g00">
+            <objects>
+                <viewController id="HD8-9o-weL" customClass="WorldGameViewController" customModule="Save_the_World" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Iv3-ld-QUZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <skView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qco-Nb-JSb">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="618"/>
+                            </skView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Qco-Nb-JSb" secondAttribute="bottom" id="aDi-bK-cWi"/>
+                            <constraint firstItem="Qco-Nb-JSb" firstAttribute="leading" secondItem="Iv3-ld-QUZ" secondAttribute="leading" id="cZP-iA-DqH"/>
+                            <constraint firstAttribute="trailing" secondItem="Qco-Nb-JSb" secondAttribute="trailing" id="g3O-Ry-13m"/>
+                            <constraint firstItem="Qco-Nb-JSb" firstAttribute="top" secondItem="Iv3-ld-QUZ" secondAttribute="top" id="h4F-Z0-dPU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="gameView" destination="Qco-Nb-JSb" id="n2L-UU-nmh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rag-TN-Ydj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-687" y="-76"/>
         </scene>
     </scenes>
 </document>
