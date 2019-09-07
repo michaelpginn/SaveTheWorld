@@ -33,7 +33,7 @@ class HomeViewController: UIViewController {
             self.performSegue(withIdentifier: "showSignup", sender: self)
         }
         else {
-            self.usernameLabel.text = persistentStoreManager.username
+            self.usernameLabel.text = "\(persistentStoreManager.username ?? "")'s world"
         }
     }
     

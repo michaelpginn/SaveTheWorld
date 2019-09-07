@@ -56,4 +56,8 @@ class PersistentStoreManager: NSObject {
 //            
 //        }
     }
+    
+    func completeTask(task:Task){
+        
+    }
 }

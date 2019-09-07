@@ -49,7 +49,7 @@ class ApiService: NSObject {
     /// Gets non completed tasks for a user
     func getTasks(start: DocumentSnapshot? = nil, step: Int = 10, completion: @escaping ([Task]?, Error?, DocumentSnapshot?) -> Void){
         let tasksCollection = db.collection("tasks")
-            .order(by: "score")
+            .order(by: "points")
             .limit(to: step)
         
         if let start = start {
@@ -60,10 +60,10 @@ class ApiService: NSObject {
             if let querySnapshot = querySnapshot {
                 var tasks: [Task] = []
                 for task in querySnapshot.documents {
-                    let id:String = task.get("id") as! String
-                    let name:String = task.get("name") as! String
-                    let description:String = task.get("description") as! String
-                    let isEveryday:Bool = (task.get("isEveryday") != nil)
+                    let id:String = task.get("id") as! String ?? ""
+                    let name:String = task.get("name") as? String ?? ""
+                    let description:String = task.get("description") as? String ?? ""
+                    let isEveryday:Bool = task.get("isEveryday") as? Bool ?? false
                     
                     tasks.append(Task(id: id, name: name, description: description, isEveryday: isEveryday))
                 }

@@ -22,22 +22,33 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-lm-0oO">
-                                        <rect key="frame" x="8" y="36" width="84.5" height="28"/>
+                                        <rect key="frame" x="20" y="12" width="84.5" height="28"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emD-Ao-G0p">
+                                        <rect key="frame" x="20" y="48" width="50" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="6zk-wy-yTX"/>
+                                            <constraint firstAttribute="height" constant="50" id="n2q-Vz-aGI"/>
+                                        </constraints>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="4aY-lm-0oO" firstAttribute="centerY" secondItem="3X8-RO-WD1" secondAttribute="centerY" id="LKq-g1-u3C"/>
                                     <constraint firstAttribute="height" constant="100" id="Zlo-4p-Fzb"/>
-                                    <constraint firstItem="4aY-lm-0oO" firstAttribute="leading" secondItem="3X8-RO-WD1" secondAttribute="leading" constant="8" id="eXd-QI-h4J"/>
+                                    <constraint firstItem="emD-Ao-G0p" firstAttribute="leading" secondItem="3X8-RO-WD1" secondAttribute="leading" constant="20" id="dze-im-a7Z"/>
+                                    <constraint firstItem="4aY-lm-0oO" firstAttribute="leading" secondItem="3X8-RO-WD1" secondAttribute="leading" constant="20" id="eXd-QI-h4J"/>
+                                    <constraint firstItem="4aY-lm-0oO" firstAttribute="top" secondItem="3X8-RO-WD1" secondAttribute="top" constant="12" id="oNV-tG-QIk"/>
+                                    <constraint firstItem="emD-Ao-G0p" firstAttribute="top" secondItem="4aY-lm-0oO" secondAttribute="bottom" constant="8" id="p5d-VI-CSZ"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-QK-oy4">
                                 <rect key="frame" x="0.0" y="144" width="414" height="666"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.41960784309999999" green="0.57647058819999997" blue="0.83921568629999999" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="HD8-9o-weL" kind="embed" id="Wwl-UE-2o6"/>
                                 </connections>
@@ -117,13 +128,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <visualEffectView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bfv-Cl-RaV">
-                                <rect key="frame" x="0.0" y="64" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="60" width="414" height="846"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Wdi-pC-jzv">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="846"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-YF-RiA">
-                                            <rect key="frame" x="0.0" y="52" width="414" height="782"/>
+                                            <rect key="frame" x="0.0" y="52" width="414" height="786"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="SeZ-bo-wvW" id="4hX-9I-x4e"/>
@@ -168,7 +179,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="bfv-Cl-RaV" firstAttribute="leading" secondItem="OHA-gm-GSc" secondAttribute="leading" id="8xL-Nr-iPn"/>
-                            <constraint firstItem="bfv-Cl-RaV" firstAttribute="top" secondItem="OHA-gm-GSc" secondAttribute="top" constant="20" id="g2U-os-UEB"/>
+                            <constraint firstItem="bfv-Cl-RaV" firstAttribute="top" secondItem="OHA-gm-GSc" secondAttribute="top" constant="16" id="g2U-os-UEB"/>
                             <constraint firstItem="OHA-gm-GSc" firstAttribute="trailing" secondItem="bfv-Cl-RaV" secondAttribute="trailing" id="kul-RX-K0M"/>
                             <constraint firstAttribute="bottom" secondItem="bfv-Cl-RaV" secondAttribute="bottom" constant="-10" id="lmw-a5-WJ8"/>
                         </constraints>

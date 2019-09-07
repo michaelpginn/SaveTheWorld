@@ -21,7 +21,7 @@ enum WorldStage{
         case .blue:
             return UIColor(displayP3Red: 107/255.0, green: 147/255.0, blue: 214/255.0, alpha: 1.0)
         case .greenBlue:
-            return .green
+            return UIColor(displayP3Red: 107/255.0, green: 147/255.0, blue: 214/255.0, alpha: 1.0)
         }
     }
 }
@@ -38,13 +38,16 @@ class WorldScene: SKScene {
     }
     
     func setupWorld() {
-        let world = SKShapeNode(circleOfRadius: frame.width / 2 - 50)
+        let worldSize:CGFloat = frame.width / 2 - 50
+        let world = SKShapeNode(circleOfRadius: worldSize)
         world.fillColor = WorldStage.color(stage:stage)
         world.strokeColor = WorldStage.color(stage:stage)
         world.glowWidth = 5
+        world.position = CGPoint(x: 0, y: 50)
         addChild(world)
         if(stage == .greenBlue){
             let continent = SKSpriteNode(texture: SKTexture(imageNamed: "geography"))
+            continent.scale(to: CGSize(width: worldSize * 2, height: worldSize * 2))
             world.addChild(continent)
         }
     }

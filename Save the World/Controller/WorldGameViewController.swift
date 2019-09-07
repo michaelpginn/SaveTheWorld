@@ -17,24 +17,12 @@ class WorldGameViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = .clear
-//        gameView.showsFPS = true
-//        gameView.showsNodeCount = true
         gameView.ignoresSiblingOrder = true
         gameView.allowsTransparency = true
         let scene = WorldScene()
+        scene.stage = .greenBlue
         scene.scaleMode = .resizeFill
         gameView.presentScene(scene)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
