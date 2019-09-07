@@ -16,10 +16,12 @@ class WorldGameViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = .clear
         gameView.showsFPS = true
         gameView.showsNodeCount = true
         gameView.ignoresSiblingOrder = true
-        let scene = SKScene()
+        gameView.allowsTransparency = true
+        let scene = WorldScene()
         scene.scaleMode = .resizeFill
         gameView.presentScene(scene)
     }

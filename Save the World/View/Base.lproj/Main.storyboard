@@ -20,20 +20,21 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3X8-RO-WD1">
                                 <rect key="frame" x="0.0" y="44" width="414" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Zlo-4p-Fzb"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oI3-L3-ES0">
                                 <rect key="frame" x="0.0" y="762" width="414" height="100"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="MpQ-I3-onw"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-QK-oy4">
                                 <rect key="frame" x="0.0" y="144" width="414" height="618"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <segue destination="HD8-9o-weL" kind="embed" id="Wwl-UE-2o6"/>
                                 </connections>
@@ -96,6 +97,7 @@
                             <constraint firstAttribute="trailing" secondItem="Qco-Nb-JSb" secondAttribute="trailing" id="g3O-Ry-13m"/>
                             <constraint firstItem="Qco-Nb-JSb" firstAttribute="top" secondItem="Iv3-ld-QUZ" secondAttribute="top" id="h4F-Z0-dPU"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Gv-CH-Wta"/>
                     </view>
                     <connections>
                         <outlet property="gameView" destination="Qco-Nb-JSb" id="n2L-UU-nmh"/>
