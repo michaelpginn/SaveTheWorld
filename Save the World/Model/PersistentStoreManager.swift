@@ -25,7 +25,7 @@ class PersistentStoreManager: NSObject {
     
     var score:Int{
         get{
-            return defaults.integer(forKey: "score") ?? 0
+            return defaults.integer(forKey: "score")
         }
         set(i){
             defaults.set(i, forKey: "score")

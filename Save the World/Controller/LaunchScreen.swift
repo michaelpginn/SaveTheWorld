@@ -24,7 +24,6 @@ class LaunchScreen: UIViewController, UITextFieldDelegate {
 //        api.signUp(username: text, completion: { success in
 //            
 //        })
-
         
     }
     

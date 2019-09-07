@@ -16,6 +16,8 @@ class ApiService: NSObject {
     var username:String?
     var score: Int?
     
+    let db = Firestore.firestore()
+    
     override init(){
         username = UserDefaults.standard.string(forKey: "username")
         score = UserDefaults.standard.integer(forKey: "score")
