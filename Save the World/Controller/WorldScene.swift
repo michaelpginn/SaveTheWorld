@@ -17,9 +17,9 @@ enum WorldStage{
     static func color(stage:WorldStage)->UIColor{
         switch(stage){
         case .brown:
-            return .brown
+            return UIColor(displayP3Red: 216/255.0, green: 197/255.0, blue: 150/255.0, alpha: 1.0)
         case .blue:
-            return .blue
+            return UIColor(displayP3Red: 107/255.0, green: 147/255.0, blue: 214/255.0, alpha: 1.0)
         case .greenBlue:
             return .green
         }
@@ -34,18 +34,23 @@ class WorldScene: SKScene {
         backgroundColor = .clear
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         setupWorld()
+        setupStickers()
     }
     
     func setupWorld() {
-        let world = SKShapeNode(circleOfRadius: 100)
+        let world = SKShapeNode(circleOfRadius: frame.width / 2 - 50)
         world.fillColor = WorldStage.color(stage:stage)
         world.strokeColor = WorldStage.color(stage:stage)
-        world.glowWidth = 10
-        
-        self.addChild(world)
+        world.glowWidth = 5
+        addChild(world)
     }
     
     func setupStickers(){
-        
+        guard let stickers = self.stickers else{return}
+        for sticker in stickers{
+            let stickerNode = SKSpriteNode(texture: sticker.texture, size: CGSize(width: 50, height: 50))
+            stickerNode.position = sticker.location
+            addChild(stickerNode)
+        }
     }
 }
