@@ -13,6 +13,10 @@ enum WorldStage{
     case brown
     case blue
     case greenBlue
+    
+    func color(stage:WorldStage){
+        
+    }
 }
 
 class WorldScene: SKScene {
@@ -21,11 +25,15 @@ class WorldScene: SKScene {
     
     override func didMove(to view: SKView) {
         backgroundColor = .clear
-        
+        self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        setupWorld()
     }
     
-    func setupPlanet(){
-        
+    func setupWorld() {
+        let world = SKShapeNode(circleOfRadius: 100)
+        world.fillColor = .brown
+        world.glowWidth = 0.3
+        self.addChild(world)
     }
     
     func setupStickers(){
