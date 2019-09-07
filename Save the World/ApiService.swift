@@ -8,9 +8,11 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class ApiService: NSObject {
     var ref: DatabaseReference = Database.database().reference()
+    
     var username:String?
     
     override init(){
@@ -39,7 +41,7 @@ class ApiService: NSObject {
     
     /// Signs up a user with a given username, returns success
      func signUp(username:String)->Bool{
-        
+        ref.child("users").child(username).setValue(["username": username, "score":0])
         return false
     }
 }
