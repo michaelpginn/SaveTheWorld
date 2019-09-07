@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		39CF146123235B45008C4DCE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 39CF146023235B45008C4DCE /* GoogleService-Info.plist */; };
 		959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3A72322FB76006AA75B /* AppDelegate.swift */; };
 		959EF3AF2322FB76006AA75B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 959EF3AD2322FB76006AA75B /* Main.storyboard */; };
 		959EF3B12322FB79006AA75B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 959EF3B02322FB79006AA75B /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39CF146023235B45008C4DCE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		959EF3A42322FB76006AA75B /* Save the World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Save the World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		959EF3A72322FB76006AA75B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		959EF3AE2322FB76006AA75B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 		959EF3A62322FB76006AA75B /* Save the World */ = {
 			isa = PBXGroup;
 			children = (
+				39CF146023235B45008C4DCE /* GoogleService-Info.plist */,
 				959EF3A72322FB76006AA75B /* AppDelegate.swift */,
 				959EF3BD23232C7C006AA75B /* Controller */,
 				959EF3BB23232C64006AA75B /* Model */,
@@ -156,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				959EF3B42322FB79006AA75B /* LaunchScreen.storyboard in Resources */,
+				39CF146123235B45008C4DCE /* GoogleService-Info.plist in Resources */,
 				959EF3B12322FB79006AA75B /* Assets.xcassets in Resources */,
 				959EF3AF2322FB76006AA75B /* Main.storyboard in Resources */,
 			);
