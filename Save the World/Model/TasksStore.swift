@@ -19,9 +19,14 @@ class TasksStore: NSObject {
     /// Loads another 10 items from the api
     func loadMore(){
         api.getTasks(start: lastDocument) { (tasks, error, document) in
-            if let tasks = tasks, let document = document{
-                self.lastDocument = document
-                self.tasks.append(contentsOf: tasks)
+            if(error == nil){
+                if let tasks = tasks, let document = document{
+                    self.lastDocument = document
+                    self.tasks.append(contentsOf: tasks)
+                    NotificationCenter.default.post(name: .TasksLoaded, object: nil)
+                }
+            }else{
+                print(error?.localizedDescription)
             }
         }
     }

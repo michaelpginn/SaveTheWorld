@@ -47,29 +47,27 @@ class ApiService: NSObject {
     }
     
     /// Gets non completed tasks for a user
-    func getTasks(start: DocumentSnapshot?, step: Int = 10, completion: @escaping ([Task]?, Error?, DocumentSnapshot?) -> Void){
-        var thisFuckingTaskMan = db.collection("tasks")
+    func getTasks(start: DocumentSnapshot? = nil, step: Int = 10, completion: @escaping ([Task]?, Error?, DocumentSnapshot?) -> Void){
+        let tasksCollection = db.collection("tasks")
             .order(by: "score")
             .limit(to: step)
         
         if let start = start {
-            thisFuckingTaskMan.start(atDocument: start)
+            tasksCollection.start(atDocument: start)
         }
         
-        thisFuckingTaskMan.getDocuments { (querySnapshot, error) in
+        tasksCollection.getDocuments { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 var tasks: [Task] = []
-                var lastDocument: DocumentSnapshot? = nil
                 for task in querySnapshot.documents {
-                    lastDocument = task
-                    var id:String = task.get("id") as! String
-                    var name:String = task.get("name") as! String
-                    var description:String = task.get("description") as! String
-                    var isEveryday:Bool = (task.get("isEveryday") != nil)
+                    let id:String = task.get("id") as! String
+                    let name:String = task.get("name") as! String
+                    let description:String = task.get("description") as! String
+                    let isEveryday:Bool = (task.get("isEveryday") != nil)
                     
                     tasks.append(Task(id: id, name: name, description: description, isEveryday: isEveryday))
                 }
-                completion(tasks, error, lastDocument)
+                completion(tasks, error, querySnapshot.documents.last)
             }
             else {
                 completion(nil, error, nil)
