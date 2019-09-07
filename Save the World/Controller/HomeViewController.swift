@@ -19,26 +19,14 @@ class HomeViewController: UIViewController {
         view.addSubview(bgView)
         view.sendSubviewToBack(bgView)
         view.contentMode = .scaleAspectFill
-        
-            }
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         //check for first login
         if(defaults.string(forKey: "username") == nil){
             self.performSegue(withIdentifier: "showSignup", sender: self)
         }
-
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
