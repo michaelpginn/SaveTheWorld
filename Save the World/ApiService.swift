@@ -11,15 +11,17 @@ import Firebase
 
 class ApiService: NSObject {
     
+    var username:String?
+    var score: Int?
     
-//    var username:String?
-//    var score: Int?
-//    
-//    override init(){
-//        username = UserDefaults.standard.string(forKey: "username")
-//        score = UserDefaults.standard.integer(forKey: "score")
-//    }
-//    
+    let db = Firestore.firestore()
+    
+    override init(){
+        username = UserDefaults.standard.string(forKey: "username")
+        score = UserDefaults.standard.integer(forKey: "score")
+        
+    }
+//
 //    /// Sends the score to the api for the current user
 //     func postScore(){
 //        guard let username = self.username else {return}
@@ -31,15 +33,17 @@ class ApiService: NSObject {
 //        return []
 //    }
 //    
-//    func checkUsernameExists(username:String, completion:@escaping (Bool)->Void){
+    func checkUsernameExists(username:String, completion:@escaping (Bool)->Void){
+        
+        
 //        ref.child("users").observeSingleEvent(of: .value, with:{ snapshot in
 //            if snapshot.hasChild(username){
 //                completion(false)
 //            }
 //        })
 //        completion(true)
-//    }
-//    
+    }
+//
 //    /// Gets non completed tasks for a user
 //    func getTasks(completedTasks:[Task])->[Task]{
 //        return []
