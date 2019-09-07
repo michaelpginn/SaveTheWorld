@@ -9,11 +9,16 @@
 import UIKit
 
 class FriendsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet weak var tableView:UITableView!
-    @IBOutlet weak var textField:UITextField!
+    @IBOutlet weak var friendTable:UITableView!
+    @IBOutlet weak var friendSearch:UITextField!
     
-    var api:ApiService!
-    var persistentStoreManager: PersistentStoreManager!
+    @IBAction func exit(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
+    
+    var api = ApiService()
+    var persistentStoreManager = PersistentStoreManager()
     var friendList:[Friend]{
         get{
             return persistentStoreManager.friendList
@@ -41,15 +46,15 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     @IBAction func addFriend(_ sender: UIButton){
-        if let text = textField.text{
+        if let text = friendSearch.text{
             guard !friendList.contains(text) else{
                 UIAlertController.quickAlert("Error adding", title:"You already have this friend", sender:self)
                 return
             }
             self.api.checkUsernameExists(username: text) { (success) in
-                if(success){
+                if(!success){
                     self.friendList.append(text)
-                    self.tableView.reloadData()
+                    self.friendTable.reloadData()
                 }else{
                     UIAlertController.quickAlert("Error adding", title:"This user doesn't exist :(", sender:self)
                 }

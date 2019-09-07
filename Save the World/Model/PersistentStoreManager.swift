@@ -34,6 +34,9 @@ class PersistentStoreManager: NSObject {
     
     var friendList:[Friend]{
         get{
+            if(defaults.array(forKey: "freinds")==nil){
+                defaults.set([], forKey: "friends")
+            }
             return (defaults.array(forKey: "friends") ?? []) as [Friend]
         }
         set(i){
