@@ -10,29 +10,36 @@ import UIKit
 import Firebase
 
 class ApiService: NSObject {
+    var ref: DatabaseReference = Database.database().reference()
+    var username:String?
+    
+    override init(){
+        username = UserDefaults.standard.string(forKey: "username")
+    }
     
     /// Sends the score to the api for the current user
-    class func postScore(){
+     func postScore(){
         
     }
     
     /// Gets an array of the latest actions for the user feed, by querying for actions matching a user's friends
-    class func getFeed()->[Action]{
+     func getFeed()->[Action]{
         return []
     }
     
     /// Checks if a user matching a username exists before adding to friend list
-    class func checkFriend(username:String)->Bool{
+     func checkFriend(username:String)->Bool{
         return false
     }
     
     /// Gets non completed tasks for a user
-    class func getTasks()->[Task]{
+     func getTasks()->[Task]{
         return []
     }
     
     /// Signs up a user with a given username, returns success
-    class func signUp(username:String)->Bool{
+     func signUp(username:String)->Bool{
+        
         return false
     }
 }
