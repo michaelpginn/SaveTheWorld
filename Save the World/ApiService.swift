@@ -19,12 +19,18 @@ class ApiService: NSObject {
     override init(){
         username = UserDefaults.standard.string(forKey: "username")
         score = UserDefaults.standard.integer(forKey: "score")
+        
     }
     
     /// Sends the score to the api for the current user
     func postScore(){
         guard let username = self.username else {return}
         db.collection("users").document(username).setData(["score": score])
+    }
+    
+    func postAction(action: Action){
+        guard let username = self.username else {return}
+        db.collection("actions").document(username + String(action.dateTime.timeIntervalSince1970)).setData(["dateTime": action.dateTime, "description": action.description, "taskId": action.taskId, "username": action.username])
     }
     
     

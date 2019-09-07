@@ -13,7 +13,7 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     
     var persistentStore = PersistentStoreManager()
     var tasksStore: TasksStore!
-    
+    var api = ApiService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +29,10 @@ class TasksViewController: UIViewController, UITableViewDataSource {
         if longPressGestureRecognizer.state == .began {
             let touchPoint = longPressGestureRecognizer.location(in: self.view)
             if let indexPath = tableView.indexPathForRow(at: touchPoint){
-                persistentStore.completeTask(task: tasksStore[indexPath.row])
+                let task = tasksStore[indexPath.row]
+                persistentStore.completeTask(task: task)
+                api.postAction(action: Action(username: api.username!, description: "completed a task", taskId: task.id, dateTime: Date()))
+                
                 self.dismiss(animated: true)
             }
         }
@@ -42,13 +45,17 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //use tasksStore[indexPath.row] to get each task
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "task")
+        let protoCell = tableView.dequeueReusableCell(withIdentifier: "protoCell")
+        let textLabel = protoCell?.viewWithTag(1) as! UILabel
+        let textLabel2 = protoCell?.viewWithTag(2) as! UILabel
+        
+        //let cell = UITableViewCell(style: .default, reuseIdentifier: "task")
         
         let task = tasksStore[indexPath.row]
         
-        cell.textLabel?.text = task.name
-        cell.detailTextLabel?.text = task.description
-        return cell
+        textLabel.text = task.name
+        textLabel2.text = task.description
+        return protoCell!
     }
 
     //when you reach the end you can call tasksStore.loadMore()
