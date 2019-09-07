@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     let tasksStore = TasksStore()
     let persistentStoreManager = PersistentStoreManager()
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class HomeViewController: UIViewController {
         }
         else {
             self.usernameLabel.text = "\(persistentStoreManager.username ?? "")'s world"
+            self.scoreLabel.text = "Score: \(persistentStoreManager.score)"
         }
     }
     

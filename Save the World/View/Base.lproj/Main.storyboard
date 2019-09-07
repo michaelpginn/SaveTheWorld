@@ -42,26 +42,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emD-Ao-G0p">
-                                        <rect key="frame" x="20" y="48" width="40" height="40"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="6zk-wy-yTX"/>
-                                            <constraint firstAttribute="height" constant="40" id="n2q-Vz-aGI"/>
-                                        </constraints>
-                                        <state key="normal" image="icon-group"/>
-                                        <connections>
-                                            <segue destination="Ge2-DP-M6A" kind="presentation" id="Ymh-8R-PyY"/>
-                                        </connections>
-                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjS-Bu-4qF">
+                                        <rect key="frame" x="20" y="52" width="60.5" height="20"/>
+                                        <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="qjS-Bu-4qF" firstAttribute="top" secondItem="4aY-lm-0oO" secondAttribute="bottom" constant="12" id="Jkk-Nt-EDf"/>
                                     <constraint firstAttribute="height" constant="100" id="Zlo-4p-Fzb"/>
-                                    <constraint firstItem="emD-Ao-G0p" firstAttribute="leading" secondItem="3X8-RO-WD1" secondAttribute="leading" constant="20" id="dze-im-a7Z"/>
                                     <constraint firstItem="4aY-lm-0oO" firstAttribute="leading" secondItem="3X8-RO-WD1" secondAttribute="leading" constant="20" id="eXd-QI-h4J"/>
+                                    <constraint firstItem="qjS-Bu-4qF" firstAttribute="leading" secondItem="3X8-RO-WD1" secondAttribute="leading" constant="20" id="lti-ub-C4A"/>
                                     <constraint firstItem="4aY-lm-0oO" firstAttribute="top" secondItem="3X8-RO-WD1" secondAttribute="top" constant="12" id="oNV-tG-QIk"/>
-                                    <constraint firstItem="emD-Ao-G0p" firstAttribute="top" secondItem="4aY-lm-0oO" secondAttribute="bottom" constant="8" id="p5d-VI-CSZ"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-QK-oy4">
@@ -106,6 +100,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </visualEffectView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emD-Ao-G0p">
+                                <rect key="frame" x="20" y="750" width="40" height="40"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="6zk-wy-yTX"/>
+                                    <constraint firstAttribute="height" constant="40" id="n2q-Vz-aGI"/>
+                                </constraints>
+                                <state key="normal" image="icon-group"/>
+                                <connections>
+                                    <segue destination="Ge2-DP-M6A" kind="presentation" id="Ymh-8R-PyY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -114,6 +120,8 @@
                             <constraint firstItem="3X8-RO-WD1" firstAttribute="top" secondItem="psh-ih-H6l" secondAttribute="top" id="1m9-Av-Wsi"/>
                             <constraint firstItem="3X8-RO-WD1" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="7Qf-w6-VhS"/>
                             <constraint firstItem="GKH-ex-KiI" firstAttribute="top" secondItem="wTo-QK-oy4" secondAttribute="bottom" id="IU2-dp-Ct5"/>
+                            <constraint firstItem="emD-Ao-G0p" firstAttribute="leading" secondItem="a9O-mo-xNk" secondAttribute="leading" constant="20" id="Kqg-nC-zrU"/>
+                            <constraint firstItem="GKH-ex-KiI" firstAttribute="top" secondItem="emD-Ao-G0p" secondAttribute="bottom" constant="20" id="WSg-rJ-54O"/>
                             <constraint firstItem="GKH-ex-KiI" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="g8w-oc-VYl"/>
                             <constraint firstItem="psh-ih-H6l" firstAttribute="trailing" secondItem="wTo-QK-oy4" secondAttribute="trailing" id="hDQ-mH-x1k"/>
                             <constraint firstItem="wTo-QK-oy4" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="pDN-um-KrQ"/>
@@ -125,6 +133,7 @@
                         <viewLayoutGuide key="safeArea" id="psh-ih-H6l"/>
                     </view>
                     <connections>
+                        <outlet property="scoreLabel" destination="qjS-Bu-4qF" id="7HL-8C-6VR"/>
                         <outlet property="usernameLabel" destination="4aY-lm-0oO" id="csY-jA-Fyz"/>
                         <segue destination="Od2-pC-ulT" kind="presentation" identifier="showSignup" modalPresentationStyle="overFullScreen" id="z84-J1-kFf"/>
                     </connections>
