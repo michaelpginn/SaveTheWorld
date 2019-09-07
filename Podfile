@@ -8,6 +8,6 @@ target 'Save the World' do
   # Pods for Save the World
 
 pod 'Firebase/Analytics'
-pod 'Firebase/Database'
-
+pod 'Firebase/Firestore'
+pod 'Firebase/Core'
 end

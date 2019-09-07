@@ -90,9 +90,10 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwg-0a-Ec9">
-                                <rect key="frame" x="308" y="342" width="46" height="30"/>
+                                <rect key="frame" x="308" y="345" width="49" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
+                                <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
+                                <state key="normal" title="go"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="Od2-pC-ulT" eventType="touchUpInside" id="bho-df-jDp"/>
                                 </connections>
