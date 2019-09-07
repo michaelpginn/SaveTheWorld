@@ -21,9 +21,12 @@ class LaunchScreen: UIViewController, UITextFieldDelegate {
         
         let api = ApiService()
 
-//        api.signUp(username: text, completion: { success in
-//            
-//        })
+        
+        api.signUp(username: text, error: {
+            let alert = UIAlertController(title: "Username taken", message:  "HAHA SUX 4 U. That name is already taken. SUX 2 SUX", preferredStyle: .alert)
+            
+            self.present(alert, animated: true)
+        })
         
     }
     

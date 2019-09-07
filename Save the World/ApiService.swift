@@ -16,8 +16,6 @@ class ApiService: NSObject {
     var username:String?
     var score: Int?
     
-    let db = Firestore.firestore()
-    
     override init(){
         username = UserDefaults.standard.string(forKey: "username")
         score = UserDefaults.standard.integer(forKey: "score")
@@ -57,10 +55,13 @@ class ApiService: NSObject {
     }
 
     /// Signs up a user with a given username, returns success
-    func signUp(username:String, completion:@escaping (Bool)->Void){
+    func signUp(username:String, error: @escaping ()->Void = {}){
         checkUsernameExists(username: username) { (exists) in
             if !exists{
                 self.db.collection("users").document(username).setData(["username": username, "score":0])
+            }
+            else {
+                error()
             }
         }
     }
