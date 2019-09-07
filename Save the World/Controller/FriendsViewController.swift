@@ -35,6 +35,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(friendList)
         return friendList.count
     }
     
@@ -47,12 +48,13 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func addFriend(_ sender: UIButton){
         if let text = friendSearch.text{
-            guard !friendList.contains(text) else{
-                UIAlertController.quickAlert("Error adding", title:"You already have this friend", sender:self)
+            
+            if friendList.contains(text) {
+                UIAlertController.quickAlert("You already have this friend", title:"Error adding", sender:self)
                 return
             }
             self.api.checkUsernameExists(username: text) { (success) in
-                if(!success){
+                if(success){
                     self.friendList.append(text)
                     self.friendTable.reloadData()
                 }else{
