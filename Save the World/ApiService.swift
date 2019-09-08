@@ -17,7 +17,8 @@ class ApiService: NSObject {
     /// Sends the score to the api for the current user
     func postScore(){
         guard let username = persistentStoreManager.username else {return}
-        db.collection("users").document(username).setData(["score": persistentStoreManager.score])
+        db.collection("users").document(username).setData(["score": persistentStoreManager.score], merge: true)
+        
     }
     
     func postAction(action: Action){
