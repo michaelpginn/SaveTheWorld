@@ -9,11 +9,16 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var scoreLabel: UILabel!
+    
+    
     let defaults = UserDefaults.standard
     let tasksStore = TasksStore()
     let persistentStoreManager = PersistentStoreManager()
-    @IBOutlet weak var usernameLabel: UILabel!
-    @IBOutlet weak var scoreLabel: UILabel!
+    let scoreManager = ScoreManager()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +42,12 @@ class HomeViewController: UIViewController {
         }
         else {
             self.usernameLabel.text = "\(persistentStoreManager.username ?? "")'s world"
-            self.scoreLabel.text = "Score: \(persistentStoreManager.score)"
+            reloadScore()
         }
     }
     
     @objc func reloadScore(){
-        self.scoreLabel.text = "Score: \(persistentStoreManager.score)"
+        self.scoreLabel.text = "Score: \(persistentStoreManager.score)  |  Level: \(scoreManager.level)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
