@@ -13,6 +13,7 @@ class WorldGameViewController: UIViewController {
     @IBOutlet var gameView: SKView!
     
     var scoreManager = ScoreManager()
+    var persistentStoreManager = PersistentStoreManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +27,15 @@ class WorldGameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.levelUp), name: .LevelUp, object: nil)
     }
     
+    var stickerNames = ["Rock", "Dolphin", "Mountain", "Tree", "Shrub"]
+    
     @objc func levelUp(){
-
-        gameView.presentScene(createScene(), transition: .crossFade(withDuration: 1.0))
+        let scene = createScene()
+        if scoreManager.level > 3{
+            let rand = Int.random(in: 0 ... 4)
+            scene.newSticker = Sticker(id: stickerNames[rand])
+        }
+        gameView.presentScene(scene, transition: .crossFade(withDuration: 1.0))
     }
     
     private func createScene()->WorldScene{
@@ -38,12 +45,19 @@ class WorldGameViewController: UIViewController {
             scene.stage = .brown
         case 2:
             scene.stage = .blue
+        case 3:
+            scene.stage = .greenBlue
         default:
             scene.stage = .greenBlue
         }
         
         scene.scaleMode = .resizeFill
+        scene.stickers = loadStickers()
+        scene.persistentStoreManager = self.persistentStoreManager
         return scene
     }
     
+    func loadStickers()->[Sticker]{
+        return persistentStoreManager.getStickers()
+    }
 }

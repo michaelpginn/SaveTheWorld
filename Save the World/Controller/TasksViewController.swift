@@ -54,8 +54,12 @@ class TasksViewController: UIViewController, UITableViewDataSource {
         //let cell = UITableViewCell(style: .default, reuseIdentifier: "task")
         
         let task = tasksStore[indexPath.row]
-        
-        textLabel.text = task.name
+        if (task.points==1) {
+            textLabel.text = "\(task.name) - \(task.points) point"
+        }
+        else {
+            textLabel.text = "\(task.name) - \(task.points) points"
+        }
         textLabel2.text = task.description
         return protoCell!
     }
