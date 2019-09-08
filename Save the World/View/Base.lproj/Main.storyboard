@@ -100,8 +100,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3X8-RO-WD1">
                                 <rect key="frame" x="0.0" y="44" width="414" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-lm-0oO">
-                                        <rect key="frame" x="20" y="12" width="84.5" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4aY-lm-0oO">
+                                        <rect key="frame" x="20" y="12" width="374" height="28"/>
                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="28"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -117,6 +117,7 @@
                                 <constraints>
                                     <constraint firstItem="qjS-Bu-4qF" firstAttribute="top" secondItem="4aY-lm-0oO" secondAttribute="bottom" constant="12" id="Jkk-Nt-EDf"/>
                                     <constraint firstAttribute="height" constant="100" id="Zlo-4p-Fzb"/>
+                                    <constraint firstAttribute="trailing" secondItem="4aY-lm-0oO" secondAttribute="trailing" constant="20" id="dja-qs-cFQ"/>
                                     <constraint firstItem="4aY-lm-0oO" firstAttribute="leading" secondItem="3X8-RO-WD1" secondAttribute="leading" constant="20" id="eXd-QI-h4J"/>
                                     <constraint firstItem="qjS-Bu-4qF" firstAttribute="leading" secondItem="3X8-RO-WD1" secondAttribute="leading" constant="20" id="lti-ub-C4A"/>
                                     <constraint firstItem="4aY-lm-0oO" firstAttribute="top" secondItem="3X8-RO-WD1" secondAttribute="top" constant="12" id="oNV-tG-QIk"/>
@@ -176,8 +177,8 @@
                                     <segue destination="Euf-1g-f3V" kind="presentation" id="Ymh-8R-PyY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klW-rW-4dx">
-                                <rect key="frame" x="349" y="744" width="49" height="49"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klW-rW-4dx">
+                                <rect key="frame" x="354" y="750" width="40" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="NnK-In-xwg"/>
@@ -198,8 +199,10 @@
                             <constraint firstItem="GKH-ex-KiI" firstAttribute="top" secondItem="wTo-QK-oy4" secondAttribute="bottom" id="IU2-dp-Ct5"/>
                             <constraint firstItem="emD-Ao-G0p" firstAttribute="leading" secondItem="a9O-mo-xNk" secondAttribute="leading" constant="20" id="Kqg-nC-zrU"/>
                             <constraint firstItem="GKH-ex-KiI" firstAttribute="top" secondItem="emD-Ao-G0p" secondAttribute="bottom" constant="20" id="WSg-rJ-54O"/>
+                            <constraint firstItem="GKH-ex-KiI" firstAttribute="top" secondItem="klW-rW-4dx" secondAttribute="bottom" constant="20" id="ew8-Tl-NLU"/>
                             <constraint firstItem="GKH-ex-KiI" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="g8w-oc-VYl"/>
                             <constraint firstItem="psh-ih-H6l" firstAttribute="trailing" secondItem="wTo-QK-oy4" secondAttribute="trailing" id="hDQ-mH-x1k"/>
+                            <constraint firstItem="psh-ih-H6l" firstAttribute="trailing" secondItem="klW-rW-4dx" secondAttribute="trailing" constant="20" id="iIT-FL-1tF"/>
                             <constraint firstItem="wTo-QK-oy4" firstAttribute="leading" secondItem="psh-ih-H6l" secondAttribute="leading" id="pDN-um-KrQ"/>
                             <constraint firstItem="psh-ih-H6l" firstAttribute="trailing" secondItem="GKH-ex-KiI" secondAttribute="trailing" id="sAP-uU-qdx"/>
                             <constraint firstItem="dF6-3a-uX1" firstAttribute="bottom" secondItem="psh-ih-H6l" secondAttribute="bottom" id="vsb-ym-c2R"/>
@@ -237,28 +240,28 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="846"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-YF-RiA">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="92" estimatedRowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-YF-RiA">
                                             <rect key="frame" x="0.0" y="52" width="414" height="786"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <prototypes>
                                                 <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="protoCell" rowHeight="92" id="JhH-BW-6ga">
                                                     <rect key="frame" x="0.0" y="28" width="414" height="92"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JhH-BW-6ga" id="pfS-Bs-vgF">
+                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JhH-BW-6ga" id="pfS-Bs-vgF">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="91.5"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-Of-SGb">
-                                                                <rect key="frame" x="16" y="8.5" width="382" height="90"/>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OdF-Of-SGb" customClass="TaskCellVIew" customModule="Save_the_World" customModuleProvider="target">
+                                                                <rect key="frame" x="16" y="8" width="382" height="75.5"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-Ac-HVP">
-                                                                        <rect key="frame" x="8" y="15.5" width="366" height="19"/>
+                                                                        <rect key="frame" x="8" y="8.5" width="366" height="19"/>
                                                                         <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="19"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHz-zI-fJl">
-                                                                        <rect key="frame" x="8" y="42.5" width="366" height="16"/>
+                                                                        <rect key="frame" x="8" y="35.5" width="366" height="16"/>
                                                                         <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="16"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -266,7 +269,6 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="90" id="G61-ov-h6y"/>
                                                                     <constraint firstItem="zHz-zI-fJl" firstAttribute="leading" secondItem="OdF-Of-SGb" secondAttribute="leading" constant="8" id="Ppv-a6-tdX"/>
                                                                     <constraint firstItem="SKt-Ac-HVP" firstAttribute="centerY" secondItem="OdF-Of-SGb" secondAttribute="centerY" constant="-20" id="bhQ-0R-3MB"/>
                                                                     <constraint firstItem="SKt-Ac-HVP" firstAttribute="leading" secondItem="OdF-Of-SGb" secondAttribute="leading" constant="8" id="fvj-BP-KD8"/>
@@ -528,7 +530,7 @@ username</string>
         </scene>
     </scenes>
     <resources>
-        <image name="feed-icon" width="100" height="100"/>
+        <image name="feed-icon" width="50" height="50"/>
         <image name="icon-group" width="50" height="50"/>
     </resources>
 </document>

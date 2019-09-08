@@ -23,6 +23,7 @@
 		954E2E1823245CCC00BBD2E8 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E1723245CCC00BBD2E8 /* ScoreManager.swift */; };
 		954E2E1923247E7F00BBD2E8 /* StickerPlacement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E0E232454E400BBD2E8 /* StickerPlacement+CoreDataProperties.swift */; };
 		954E2E1A23247E8100BBD2E8 /* StickerPlacement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E0C232454E300BBD2E8 /* StickerPlacement+CoreDataClass.swift */; };
+		954E2E1C2324892800BBD2E8 /* TaskCellVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E1B2324892800BBD2E8 /* TaskCellVIew.swift */; };
 		9562FB842323F3FA00590407 /* PersistentStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562FB832323F3FA00590407 /* PersistentStoreManager.swift */; };
 		9598AC7E2323DE26004A04BD /* Save_the_World_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */; };
 		959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3A72322FB76006AA75B /* AppDelegate.swift */; };
@@ -66,6 +67,7 @@
 		954E2E0E232454E400BBD2E8 /* StickerPlacement+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StickerPlacement+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		954E2E0F232454E400BBD2E8 /* CompletedTask+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CompletedTask+CoreDataClass.swift"; sourceTree = "<group>"; };
 		954E2E1723245CCC00BBD2E8 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
+		954E2E1B2324892800BBD2E8 /* TaskCellVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellVIew.swift; sourceTree = "<group>"; };
 		9562FB832323F3FA00590407 /* PersistentStoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentStoreManager.swift; sourceTree = "<group>"; };
 		9598AC7B2323DE26004A04BD /* Save the World Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Save the World Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Save_the_World_Tests.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				959EF3AD2322FB76006AA75B /* Main.storyboard */,
 				959EF3B22322FB79006AA75B /* LaunchScreen.storyboard */,
 				954E2E02232444C700BBD2E8 /* UIAlertController+QuickAlert.swift */,
+				954E2E1B2324892800BBD2E8 /* TaskCellVIew.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				954E2E03232444C700BBD2E8 /* UIAlertController+QuickAlert.swift in Sources */,
 				959EF3C9232376F0006AA75B /* Action.swift in Sources */,
 				959EF3C123232EEB006AA75B /* WorldGameViewController.swift in Sources */,
+				954E2E1C2324892800BBD2E8 /* TaskCellVIew.swift in Sources */,
 				959EF3C523233836006AA75B /* Sticker.swift in Sources */,
 				954E2E1623245A0D00BBD2E8 /* STWModel.xcdatamodeld in Sources */,
 				9562FB842323F3FA00590407 /* PersistentStoreManager.swift in Sources */,
