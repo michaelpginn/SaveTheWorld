@@ -39,13 +39,14 @@ class ApiService: NSObject {
                 if let querySnapshot = querySnapshot{
                     var actions: [Action] = []
                     for action in querySnapshot.documents {
-                        let username = action.get("username")
+                        let username = action.get("username") as! String
+                        guard friendList.contains(username) else{continue}
                         let title = action.get("title") ?? "Task"
                         let description = action.get("description")
                         let taskId = action.get("taskId")
                         let timeStamp: Timestamp = action.get("dateTime") as! Timestamp
                         
-                        actions.append(Action(username: username as! String, title: title as! String, description: description as! String, taskId: taskId as! String, dateTime: timeStamp.dateValue()))
+                        actions.append(Action(username: username , title: title as! String, description: description as! String, taskId: taskId as! String, dateTime: timeStamp.dateValue()))
                     }
                     completion(actions, error)
                 }
