@@ -16,6 +16,7 @@ class TaskCellView: UIView {
     @IBOutlet weak var titleLabel:UILabel!
     @IBOutlet weak var descriptionLabel:UILabel!
     @IBOutlet weak var progressBar:UIView!
+    @IBOutlet weak var suggestionLabel:UILabel!
     
     var timer:Timer?
     var animator:UIViewPropertyAnimator?

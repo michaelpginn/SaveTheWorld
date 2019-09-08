@@ -57,6 +57,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, TaskCellDele
                 cellContent.titleLabel.text = "\(task.name) - \(task.points) points"
             }
             cellContent.descriptionLabel.text = task.description
+            cellContent.suggestionLabel.text = task.suggestionReason
             cellContent.delegate = self
             cellContent.task = task
             return protoCell!
@@ -80,7 +81,6 @@ class TasksViewController: UIViewController, UITableViewDataSource, TaskCellDele
         let contentYoffset = scrollView.contentOffset.y
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
         if distanceFromBottom < height {
-            print("bottom of list")
             loadingMore = true
             tasksStore.loadMore()
         }

@@ -9,9 +9,11 @@
 import UIKit
 import Firebase
 
+typealias TaskGroup = [String]
+
 class ApiService: NSObject {
     
-    let db = Firestore.firestore()
+    lazy var db = Firestore.firestore()
     let persistentStoreManager = PersistentStoreManager()
     
     /// Sends the score to the api for the current user
@@ -78,7 +80,7 @@ class ApiService: NSObject {
     /// Gets non completed tasks for a user
     func getTasks(start: DocumentSnapshot? = nil, step: Int = 10, completion: @escaping ([Task]?, Error?, DocumentSnapshot?, Bool) -> Void){
         
-        
+        //load already completed tasks
         let tasksCollection:Query
         
         if let start = start {
@@ -94,15 +96,15 @@ class ApiService: NSObject {
         
         tasksCollection.getDocuments { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
-                var tasks: [Task] = []
-                for task in querySnapshot.documents {
-                    let id:String = task.get("id") as? String ?? ""
-                    let name:String = task.get("name") as? String ?? ""
-                    let description:String = task.get("description") as? String ?? ""
-                    let isEveryday:Bool = task.get("isEveryday") as? Bool ?? false
-                    let points = task.get("points") as? Int ?? 0
-                    tasks.append(Task(id: id, name: name, description: description, isEveryday: isEveryday, points:points))
-                }
+                let tasks: [Task] = querySnapshot.documents.compactMap({ (snapshot) -> Task? in
+                    let id:String = snapshot.get("id") as? String ?? ""
+                    let name:String = snapshot.get("name") as? String ?? ""
+                    let description:String = snapshot.get("description") as? String ?? ""
+                    let isEveryday:Bool = snapshot.get("isEveryday") as? Bool ?? false
+                    let points = snapshot.get("points") as? Int ?? 0
+                    return Task(id: id, name: name, description: description, isEveryday: isEveryday, points:points, suggestionReason: nil)
+                })
+                
                 completion(tasks, error, querySnapshot.documents.last, tasks.count == 0)
             }
             else {
@@ -120,6 +122,22 @@ class ApiService: NSObject {
             }
             else {
                 completion(false)            }
+        }
+    }
+    
+    func getTaskGroups(completion: @escaping ([String:TaskGroup])->Void){
+        db.collection("taskGroups").getDocuments { (snapshot, error) in
+            if let e = error{
+                print(e.localizedDescription)
+            }else if let snapshot = snapshot{
+                var groupDict:[String:TaskGroup] = [:]
+                for doc in snapshot.documents{
+                    if let ids = doc.get("taskIds") as? [String]{
+                        groupDict[doc.documentID] = ids
+                    }
+                }
+                completion(groupDict)
+            }
         }
     }
 }

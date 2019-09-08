@@ -43,7 +43,7 @@ class FeedViewController: UITableViewController {
         dateFormatter.setLocalizedDateFormatFromTemplate("M/d/yy")
         
         let cell = UITableViewCell(style: .value2, reuseIdentifier: "feedCell")
-        var action = actions[indexPath.row]
+        let action = actions[indexPath.row]
         
         let date = Date(timeIntervalSince1970: action.dateTime.timeIntervalSince1970)
         

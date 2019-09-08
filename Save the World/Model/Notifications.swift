@@ -13,4 +13,5 @@ extension Notification.Name{
     static let TaskCompleted = NSNotification.Name("task_completed")
     static let LevelUp = NSNotification.Name("level_up")
     static let UserCreated = NSNotification.Name("user_created")
+    static let FirebaseLoaded = NSNotification.Name("firebase_loaded")
 }
