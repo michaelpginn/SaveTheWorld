@@ -12,24 +12,16 @@ import Firebase
 class ApiService: NSObject {
     
     let db = Firestore.firestore()
-    
-    var username:String?
-    var score: Int?
-    
-    override init(){
-        username = UserDefaults.standard.string(forKey: "username")
-        score = UserDefaults.standard.integer(forKey: "score")
-        
-    }
+    let persistentStoreManager = PersistentStoreManager()
     
     /// Sends the score to the api for the current user
     func postScore(){
-        guard let username = self.username else {return}
-        db.collection("users").document(username).setData(["score": score])
+        guard let username = persistentStoreManager.username else {return}
+        db.collection("users").document(username).setData(["score": persistentStoreManager.score])
     }
     
     func postAction(action: Action){
-        guard let username = self.username else {return}
+        guard let username = persistentStoreManager.username else {return}
         db.collection("actions").document(username + String(action.dateTime.timeIntervalSince1970)).setData(["dateTime": action.dateTime, "description": action.description, "taskId": action.taskId, "username": action.username, "title": action.title])
     }
     
@@ -37,7 +29,7 @@ class ApiService: NSObject {
     /// Gets an array of the latest actions for the user feed, by querying for actions matching a user's friends
     func getFeed(friendList: [Friend], completion: @escaping ([Action]?, Error?) -> Void){
         var friendList = friendList;
-        friendList.append(username!)
+        friendList.append(persistentStoreManager.username!)
         db.collection("actions")
             .order(by: "dateTime", descending: true)
             .getDocuments { (querySnapshot, error) in

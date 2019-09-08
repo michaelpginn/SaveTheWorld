@@ -10,6 +10,7 @@ import UIKit
 
 class ScoreManager: NSObject {
     let persistenceStoreManager = PersistentStoreManager()
+    lazy var api = ApiService()
     
     func addPoints(points:Int){
         let oldLevel = self.level
@@ -19,6 +20,7 @@ class ScoreManager: NSObject {
             NotificationCenter.default.post(name: .LevelUp, object: nil)
             print("LEVEL UP")
         }
+        api.postScore()
     }
     
     var level:Int{

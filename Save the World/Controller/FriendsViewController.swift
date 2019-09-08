@@ -61,7 +61,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
                 return
             }
             self.api.checkUsernameExists(username: text) { (success) in
-                if(success && text != self.api.username){
+                if(success && text != self.persistentStoreManager.username){
                     self.friendList.append(text)
                     self.friendTable.reloadData()
                 }else{

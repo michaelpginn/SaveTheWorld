@@ -34,7 +34,7 @@ class TasksViewController: UIViewController, UITableViewDataSource, TaskCellDele
     
     func completeTask(task:Task){
         persistentStore.completeTask(task: task)
-        api.postAction(action: Action(username: api.username!, title: task.name
+        api.postAction(action: Action(username: persistentStore.username ?? "", title: task.name
             , description: "completed a task", taskId: task.id, dateTime: Date()))
         scoreManager.addPoints(points: task.points)
         NotificationCenter.default.post(name: .TaskCompleted, object: nil)

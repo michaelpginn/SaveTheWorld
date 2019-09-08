@@ -255,7 +255,7 @@
                                                                 <rect key="frame" x="16" y="8" width="382" height="103.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aI-kw-7Fj">
-                                                                        <rect key="frame" x="8" y="33" width="366" height="38"/>
+                                                                        <rect key="frame" x="8" y="31" width="366" height="42"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-Ac-HVP">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="366" height="19"/>
@@ -264,7 +264,7 @@
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHz-zI-fJl">
-                                                                                <rect key="frame" x="0.0" y="21" width="366" height="17"/>
+                                                                                <rect key="frame" x="0.0" y="25" width="366" height="17"/>
                                                                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -276,7 +276,7 @@
                                                                             <constraint firstAttribute="trailing" secondItem="zHz-zI-fJl" secondAttribute="trailing" id="Z0U-MS-hH8"/>
                                                                             <constraint firstAttribute="trailing" secondItem="SKt-Ac-HVP" secondAttribute="trailing" id="b4v-MZ-aR8"/>
                                                                             <constraint firstAttribute="bottom" secondItem="zHz-zI-fJl" secondAttribute="bottom" id="bpf-ig-aZM"/>
-                                                                            <constraint firstItem="zHz-zI-fJl" firstAttribute="top" secondItem="SKt-Ac-HVP" secondAttribute="bottom" constant="2" id="kOK-Mg-tum"/>
+                                                                            <constraint firstItem="zHz-zI-fJl" firstAttribute="top" secondItem="SKt-Ac-HVP" secondAttribute="bottom" constant="6" id="kOK-Mg-tum"/>
                                                                             <constraint firstItem="SKt-Ac-HVP" firstAttribute="top" secondItem="6aI-kw-7Fj" secondAttribute="top" id="pRJ-pB-eG5"/>
                                                                             <constraint firstItem="SKt-Ac-HVP" firstAttribute="leading" secondItem="6aI-kw-7Fj" secondAttribute="leading" id="vWc-UM-8Rj"/>
                                                                         </constraints>
