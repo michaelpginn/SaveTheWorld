@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3972EF8D2323648600AB442B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3972EF8C2323648600AB442B /* GoogleService-Info.plist */; };
 		3972EF8F232376BB00AB442B /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3972EF8E232376BB00AB442B /* LaunchScreen.swift */; };
+		398E3B5E232481D000216870 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398E3B5D232481D000216870 /* FeedViewController.swift */; };
 		6DC27428B63977DA49EF4B72 /* Pods_Save_the_World.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57C893CE14CC8FAE3A11506E /* Pods_Save_the_World.framework */; };
 		6FCD3A658133EE6E41ABD8CF /* Pods_Save_the_World_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC70358EEA42439A59C5E63 /* Pods_Save_the_World_Tests.framework */; };
 		954E2DF7232425B000BBD2E8 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2DF6232425B000BBD2E8 /* TasksViewController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		3972EF8C2323648600AB442B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3972EF8E232376BB00AB442B /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		398E3B5D232481D000216870 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		3EC70358EEA42439A59C5E63 /* Pods_Save_the_World_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_the_World_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A9A35BAF0B2DAD5DE674D2 /* Pods-Save the World Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Save the World Tests.debug.xcconfig"; path = "Target Support Files/Pods-Save the World Tests/Pods-Save the World Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		57C893CE14CC8FAE3A11506E /* Pods_Save_the_World.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Save_the_World.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +192,7 @@
 				959EF3C2232330FC006AA75B /* WorldScene.swift */,
 				3972EF8E232376BB00AB442B /* LaunchScreen.swift */,
 				954E2E00232440DB00BBD2E8 /* FriendsViewController.swift */,
+				398E3B5D232481D000216870 /* FeedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 			files = (
 				959EF3CC232377B4006AA75B /* Task.swift in Sources */,
 				954E2E1823245CCC00BBD2E8 /* ScoreManager.swift in Sources */,
+				398E3B5E232481D000216870 /* FeedViewController.swift in Sources */,
 				954E2E01232440DB00BBD2E8 /* FriendsViewController.swift in Sources */,
 				954E2E152324586700BBD2E8 /* CompletedTask+CoreDataClass.swift in Sources */,
 				959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */,

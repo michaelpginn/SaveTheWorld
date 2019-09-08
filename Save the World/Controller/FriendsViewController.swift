@@ -46,6 +46,13 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            friendList.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     @IBAction func addFriend(_ sender: UIButton){
         if let text = friendSearch.text{
             
@@ -54,7 +61,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
                 return
             }
             self.api.checkUsernameExists(username: text) { (success) in
-                if(success){
+                if(success && text != self.api.username){
                     self.friendList.append(text)
                     self.friendTable.reloadData()
                 }else{

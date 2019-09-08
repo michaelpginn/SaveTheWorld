@@ -30,13 +30,35 @@ class ApiService: NSObject {
     
     func postAction(action: Action){
         guard let username = self.username else {return}
-        db.collection("actions").document(username + String(action.dateTime.timeIntervalSince1970)).setData(["dateTime": action.dateTime, "description": action.description, "taskId": action.taskId, "username": action.username])
+        db.collection("actions").document(username + String(action.dateTime.timeIntervalSince1970)).setData(["dateTime": action.dateTime, "description": action.description, "taskId": action.taskId, "username": action.username, "title": action.title])
     }
     
     
     /// Gets an array of the latest actions for the user feed, by querying for actions matching a user's friends
-    func getFeed(completion: @escaping (QuerySnapshot?, Error?) -> Void){
-        db.collection("actions").getDocuments(completion: completion)
+    func getFeed(friendList: [Friend], completion: @escaping ([Action]?, Error?) -> Void){
+        var friendList = friendList;
+        friendList.append(username!)
+        db.collection("actions")
+            .order(by: "dateTime")
+            .whereField("username", isEqualTo: friendList)
+            .getDocuments { (querySnapshot, error) in
+                if let error = error {
+                    completion(nil, error)
+                    return
+                }
+                if let querySnapshot = querySnapshot{
+                    var actions: [Action] = []
+                    for action in querySnapshot.documents {
+                        let username = action.get("username")
+                        let title = action.get("title")
+                        let description = action.get("description")
+                        let taskId = action.get("taskId")
+                        let date = action.get("dateTime")
+                        actions.append(Action(username: username as! String, title: title as! String, description: description as! String, taskId: taskId as! String, dateTime: date as! Date))
+                    }
+                    completion(actions, error)
+                }
+        }
     }
     
     func checkUsernameExists(username:String, completion:@escaping (Bool)->Void){

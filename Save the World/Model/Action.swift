@@ -10,6 +10,7 @@ import Foundation
 
 struct Action{
     var username:String
+    var title:String
     var description:String
     var taskId:String
     var dateTime: Date
