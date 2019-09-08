@@ -42,9 +42,6 @@ class TaskCellView: UIView {
         UIView.animate(withDuration: 0.2) {
             self.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
         }
-        self.timer = Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { (timer) in
-            print("done")
-        }
         self.animator = UIViewPropertyAnimator(duration: 1.5, curve: .linear, animations: {
             self.bar?.frame = CGRect(x: 0, y: 0, width: self.progressBar.frame.width, height: 6)
         })
@@ -60,7 +57,8 @@ class TaskCellView: UIView {
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.timer?.invalidate()
+        self.animator?.stopAnimation(true)
+
         self.bar?.removeFromSuperview()
         self.bar = nil
         UIView.animate(withDuration: 0.2) {
@@ -70,7 +68,7 @@ class TaskCellView: UIView {
     }
     
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.timer?.invalidate()
+self.animator?.stopAnimation(true)
         self.bar?.removeFromSuperview()
         self.bar = nil
         UIView.animate(withDuration: 0.2) {
