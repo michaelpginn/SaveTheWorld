@@ -55,7 +55,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func addFriend(_ sender: UIButton){
         if let text = friendSearch.text{
-            
+            friendSearch.text = ""
             if friendList.contains(text) {
                 UIAlertController.quickAlert("You already have this friend", title:"Error adding", sender:self)
                 return
