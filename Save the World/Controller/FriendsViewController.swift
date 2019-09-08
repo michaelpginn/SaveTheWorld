@@ -16,7 +16,7 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         self.dismiss(animated: true)
     }
     
-    
+    var scoreMan = ScoreManager()
     var api = ApiService()
     var persistentStoreManager = PersistentStoreManager()
     var friendList:[Friend]{
@@ -40,9 +40,18 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "friendCell")
+        let cell = UITableViewCell(style: .value1, reuseIdentifier: "friendCell")
+        
         cell.textLabel?.text = friendList[indexPath.row]
         cell.textLabel?.font = UIFont(name: "Courier", size: 17)
+        api.getScore(username: friendList[indexPath.row], completion: { (score, error) in
+            DispatchQueue.main.async {
+                print(">>>>>>>>>>\(score)<<<<<<<<")
+                cell.detailTextLabel?.text = "LOL"
+            }
+        })
+       
+        
         return cell
     }
     
