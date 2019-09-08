@@ -19,8 +19,8 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let longPressRecognize = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress(longPressGestureRecognizer:)))
-        self.view.addGestureRecognizer(longPressRecognize)
+//        let longPressRecognize = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress(longPressGestureRecognizer:)))
+//        self.view.addGestureRecognizer(longPressRecognize)
         
         
         // Do any additional setup after loading the view.
@@ -49,20 +49,19 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //use tasksStore[indexPath.row] to get each task
         let protoCell = tableView.dequeueReusableCell(withIdentifier: "protoCell")
-        let textLabel = protoCell?.viewWithTag(1) as! UILabel
-        let textLabel2 = protoCell?.viewWithTag(2) as! UILabel
-        
-        //let cell = UITableViewCell(style: .default, reuseIdentifier: "task")
-        
-        let task = tasksStore[indexPath.row]
-        if (task.points==1) {
-            textLabel.text = "\(task.name) - \(task.points) point"
+        if let cellContent = protoCell?.viewWithTag(1) as? TaskCellView{
+            let task = tasksStore[indexPath.row]
+            if (task.points==1) {
+                cellContent.titleLabel.text = "\(task.name) - \(task.points) point"
+            }
+            else {
+                cellContent.titleLabel.text = "\(task.name) - \(task.points) points"
+            }
+            cellContent.descriptionLabel.text = task.description
+            return protoCell!
+        }else{
+            return UITableViewCell()
         }
-        else {
-            textLabel.text = "\(task.name) - \(task.points) points"
-        }
-        textLabel2.text = task.description
-        return protoCell!
     }
 
     //when you reach the end you can call tasksStore.loadMore()
