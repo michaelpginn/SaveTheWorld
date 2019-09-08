@@ -282,10 +282,10 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ADr-0m-1hz">
-                                                                        <rect key="frame" x="0.0" y="66.5" width="382" height="9"/>
+                                                                        <rect key="frame" x="0.0" y="69.5" width="382" height="6"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="height" constant="9" id="s0D-25-GdG"/>
+                                                                            <constraint firstAttribute="height" constant="6" id="s0D-25-GdG"/>
                                                                         </constraints>
                                                                     </view>
                                                                 </subviews>
