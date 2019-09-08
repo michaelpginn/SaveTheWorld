@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TasksViewController: UIViewController, UITableViewDataSource {
+class TasksViewController: UIViewController, UITableViewDataSource, TaskCellDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var persistentStore = PersistentStoreManager()
@@ -18,27 +18,16 @@ class TasksViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        let longPressRecognize = UILongPressGestureRecognizer(target: self, action: #selector(self.longPress(longPressGestureRecognizer:)))
-//        self.view.addGestureRecognizer(longPressRecognize)
-        
-        
-        // Do any additional setup after loading the view.
     }
     
-    @objc func longPress(longPressGestureRecognizer: UILongPressGestureRecognizer){
-        if longPressGestureRecognizer.state == .began {
-            let touchPoint = longPressGestureRecognizer.location(in: self.view)
-            if let indexPath = tableView.indexPathForRow(at: touchPoint){
-                let task = tasksStore[indexPath.row]
-                persistentStore.completeTask(task: task)
-                api.postAction(action: Action(username: api.username!, title: task.name
-                    , description: "completed a task", taskId: task.id, dateTime: Date()))
-                scoreManager.addPoints(points: tasksStore[indexPath.row].points)
-                NotificationCenter.default.post(name: .TaskCompleted, object: nil)
-                self.dismiss(animated: true)
-            }
-        }
+    
+    func completeTask(task:Task){
+        persistentStore.completeTask(task: task)
+        api.postAction(action: Action(username: api.username!, title: task.name
+            , description: "completed a task", taskId: task.id, dateTime: Date()))
+        scoreManager.addPoints(points: task.points)
+        NotificationCenter.default.post(name: .TaskCompleted, object: nil)
+        self.dismiss(animated: true)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -58,6 +47,8 @@ class TasksViewController: UIViewController, UITableViewDataSource {
                 cellContent.titleLabel.text = "\(task.name) - \(task.points) points"
             }
             cellContent.descriptionLabel.text = task.description
+            cellContent.delegate = self
+            cellContent.task = task
             return protoCell!
         }else{
             return UITableViewCell()
