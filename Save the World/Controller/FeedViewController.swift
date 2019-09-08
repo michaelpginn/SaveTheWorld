@@ -39,19 +39,19 @@ class FeedViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
+        dateFormatter.locale = Locale(identifier: "en_US")
+        dateFormatter.setLocalizedDateFormatFromTemplate("M/d/yy")
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "feedCell")
+        let cell = UITableViewCell(style: .value2, reuseIdentifier: "feedCell")
         var action = actions[indexPath.row]
         
         let date = Date(timeIntervalSince1970: action.dateTime.timeIntervalSince1970)
-        dateFormatter.locale = Locale(identifier: "en_US")
         
-        cell.textLabel?.text = action.title
+        cell.textLabel?.text = dateFormatter.string(from: date)
         cell.textLabel?.font = UIFont(name: "Courier", size: 17)
-        cell.detailTextLabel?.text = ("" + action.username + " " + action.description + " " + dateFormatter.string(from: date))
-    
+        cell.detailTextLabel?.text = ("\(action.username) completed task:\n\"\(action.title)\"")
+        cell.detailTextLabel?.numberOfLines = 2
+        cell.detailTextLabel?.font = UIFont(name: "Courier", size: 17)
         return cell
     }
 
