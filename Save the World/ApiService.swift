@@ -39,22 +39,18 @@ class ApiService: NSObject {
         var friendList = friendList;
         friendList.append(username!)
         db.collection("actions")
-            .order(by: "dateTime")
-            .whereField("username", isEqualTo: friendList)
+            .order(by: "dateTime", descending: true)
             .getDocuments { (querySnapshot, error) in
-                if let error = error {
-                    completion(nil, error)
-                    return
-                }
                 if let querySnapshot = querySnapshot{
                     var actions: [Action] = []
                     for action in querySnapshot.documents {
                         let username = action.get("username")
-                        let title = action.get("title")
+                        let title = action.get("title") ?? "Task"
                         let description = action.get("description")
                         let taskId = action.get("taskId")
-                        let date = action.get("dateTime")
-                        actions.append(Action(username: username as! String, title: title as! String, description: description as! String, taskId: taskId as! String, dateTime: date as! Date))
+                        let timeStamp: Timestamp = action.get("dateTime") as! Timestamp
+                        
+                        actions.append(Action(username: username as! String, title: title as! String, description: description as! String, taskId: taskId as! String, dateTime: timeStamp.dateValue()))
                     }
                     completion(actions, error)
                 }
