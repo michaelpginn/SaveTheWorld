@@ -45,7 +45,8 @@ class FriendsViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.textLabel?.font = UIFont(name: "Courier", size: 17)
         api.getScore(username: friendList[indexPath.row], completion: { (score, error) in
             DispatchQueue.main.async {
-                cell.detailTextLabel?.text = "LOL"
+                let level = ScoreManager.levelForScore(score!)
+                cell.detailTextLabel?.text = "\(level)"
             }
         })
        

@@ -215,6 +215,7 @@
                         <outlet property="scoreLabel" destination="qjS-Bu-4qF" id="7HL-8C-6VR"/>
                         <outlet property="usernameLabel" destination="4aY-lm-0oO" id="csY-jA-Fyz"/>
                         <segue destination="Od2-pC-ulT" kind="presentation" identifier="showSignup" modalPresentationStyle="overFullScreen" id="z84-J1-kFf"/>
+                        <segue destination="18Y-XE-yzz" kind="presentation" identifier="onboardingSegue" id="LVE-8e-tUs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vg9-h2-WKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -224,7 +225,23 @@
                     </connections>
                 </panGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="224.63768115942031" y="-111.16071428571428"/>
+            <point key="canvasLocation" x="219" y="-111"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="WFO-Tl-N1a">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="18Y-XE-yzz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NTJ-yP-IIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-main" id="HeA-Xm-rDR">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-tasks" id="U3v-zN-Yxy">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </objects>
+            <point key="canvasLocation" x="-1101" y="605"/>
         </scene>
         <!--Tasks View Controller-->
         <scene sceneID="QUm-k9-zxw">
@@ -559,5 +576,7 @@ username</string>
     <resources>
         <image name="feed-icon" width="50" height="50"/>
         <image name="icon-group" width="50" height="50"/>
+        <image name="onboarding-main" width="1125" height="2436"/>
+        <image name="onboarding-tasks" width="1125" height="2436"/>
     </resources>
 </document>
