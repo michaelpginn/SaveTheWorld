@@ -34,12 +34,24 @@ class FeedViewController: UITableViewController {
         return actions.count
     }
 
+
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+       
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "feedCell")
         var action = actions[indexPath.row]
+        
+        let date = Date(timeIntervalSince1970: action.dateTime.timeIntervalSince1970)
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
         cell.textLabel?.text = action.title
         cell.textLabel?.font = UIFont(name: "Courier", size: 17)
-        cell.detailTextLabel?.text = ("" + action.username + " " + action.description + " " + String(action.dateTime.timeIntervalSince1970))
+        cell.detailTextLabel?.text = ("" + action.username + " " + action.description + " " + dateFormatter.string(from: date))
+    
         return cell
     }
 
