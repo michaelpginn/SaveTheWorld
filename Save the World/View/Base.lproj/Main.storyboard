@@ -215,7 +215,6 @@
                         <outlet property="scoreLabel" destination="qjS-Bu-4qF" id="7HL-8C-6VR"/>
                         <outlet property="usernameLabel" destination="4aY-lm-0oO" id="csY-jA-Fyz"/>
                         <segue destination="Od2-pC-ulT" kind="presentation" identifier="showSignup" modalPresentationStyle="overFullScreen" id="z84-J1-kFf"/>
-                        <segue destination="18Y-XE-yzz" kind="presentation" identifier="onboardingSegue" id="LVE-8e-tUs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vg9-h2-WKA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,22 +225,6 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="219" y="-111"/>
-        </scene>
-        <!--Page View Controller-->
-        <scene sceneID="WFO-Tl-N1a">
-            <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="18Y-XE-yzz" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NTJ-yP-IIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-main" id="HeA-Xm-rDR">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="onboarding-tasks" id="U3v-zN-Yxy">
-                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
-            </objects>
-            <point key="canvasLocation" x="-1101" y="605"/>
         </scene>
         <!--Tasks View Controller-->
         <scene sceneID="QUm-k9-zxw">
@@ -272,29 +255,38 @@
                                                                 <rect key="frame" x="16" y="8" width="382" height="103.5"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aI-kw-7Fj">
-                                                                        <rect key="frame" x="8" y="31" width="366" height="42"/>
+                                                                        <rect key="frame" x="8" y="19.5" width="366" height="65"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-Ac-HVP">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="19"/>
+                                                                                <rect key="frame" x="0.0" y="23" width="366" height="19"/>
                                                                                 <fontDescription key="fontDescription" name="Courier-Bold" family="Courier" pointSize="19"/>
                                                                                 <color key="textColor" red="0.41960784309999999" green="0.57647058819999997" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHz-zI-fJl">
-                                                                                <rect key="frame" x="0.0" y="25" width="366" height="17"/>
+                                                                                <rect key="frame" x="0.0" y="48" width="366" height="17"/>
                                                                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="17"/>
                                                                                 <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="why" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mrt-My-AXv">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="366" height="17"/>
+                                                                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
+                                                                            <constraint firstItem="Mrt-My-AXv" firstAttribute="leading" secondItem="6aI-kw-7Fj" secondAttribute="leading" id="4Hd-yG-wQj"/>
                                                                             <constraint firstItem="zHz-zI-fJl" firstAttribute="leading" secondItem="6aI-kw-7Fj" secondAttribute="leading" id="Jrs-0m-VAk"/>
+                                                                            <constraint firstItem="Mrt-My-AXv" firstAttribute="top" secondItem="6aI-kw-7Fj" secondAttribute="top" id="LJ1-F8-pg8"/>
                                                                             <constraint firstAttribute="trailing" secondItem="zHz-zI-fJl" secondAttribute="trailing" id="Z0U-MS-hH8"/>
                                                                             <constraint firstAttribute="trailing" secondItem="SKt-Ac-HVP" secondAttribute="trailing" id="b4v-MZ-aR8"/>
                                                                             <constraint firstAttribute="bottom" secondItem="zHz-zI-fJl" secondAttribute="bottom" id="bpf-ig-aZM"/>
                                                                             <constraint firstItem="zHz-zI-fJl" firstAttribute="top" secondItem="SKt-Ac-HVP" secondAttribute="bottom" constant="6" id="kOK-Mg-tum"/>
-                                                                            <constraint firstItem="SKt-Ac-HVP" firstAttribute="top" secondItem="6aI-kw-7Fj" secondAttribute="top" id="pRJ-pB-eG5"/>
+                                                                            <constraint firstItem="SKt-Ac-HVP" firstAttribute="top" secondItem="Mrt-My-AXv" secondAttribute="bottom" constant="6" id="rj4-u4-b6W"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Mrt-My-AXv" secondAttribute="trailing" id="tg6-pR-dA6"/>
                                                                             <constraint firstItem="SKt-Ac-HVP" firstAttribute="leading" secondItem="6aI-kw-7Fj" secondAttribute="leading" id="vWc-UM-8Rj"/>
                                                                         </constraints>
                                                                     </view>
@@ -323,6 +315,7 @@
                                                                 <connections>
                                                                     <outlet property="descriptionLabel" destination="zHz-zI-fJl" id="Y42-hv-nmi"/>
                                                                     <outlet property="progressBar" destination="ADr-0m-1hz" id="9RK-vb-g3g"/>
+                                                                    <outlet property="suggestionLabel" destination="Mrt-My-AXv" id="Yxo-eG-67F"/>
                                                                     <outlet property="titleLabel" destination="SKt-Ac-HVP" id="uY9-Dd-wKn"/>
                                                                 </connections>
                                                             </view>
@@ -576,7 +569,5 @@ username</string>
     <resources>
         <image name="feed-icon" width="50" height="50"/>
         <image name="icon-group" width="50" height="50"/>
-        <image name="onboarding-main" width="1125" height="2436"/>
-        <image name="onboarding-tasks" width="1125" height="2436"/>
     </resources>
 </document>

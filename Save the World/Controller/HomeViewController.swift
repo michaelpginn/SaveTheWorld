@@ -38,11 +38,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         //check for first login
-        if (defaults.string(forKey: "shownTutorial") == nil) {
-            defaults.set("yes", forKey: "shownTutorial")
-            self.performSegue(withIdentifier: "onboardingSegue", sender: self)
-        }
-        else if(persistentStoreManager.username == nil){
+        if(persistentStoreManager.username == nil){
             self.performSegue(withIdentifier: "showSignup", sender: self)
         }
         else {

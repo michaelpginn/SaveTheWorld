@@ -26,7 +26,9 @@ class TasksStore: NSObject {
     
     @objc func firebaseLoaded(){
         api.getTaskGroups { (dict) in
+            print("loaded task groups")
             self.taskGroupsDict = dict
+            self.sortByTaskGroup()
         }
     }
     
