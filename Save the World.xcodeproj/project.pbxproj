@@ -21,6 +21,8 @@
 		954E2E152324586700BBD2E8 /* CompletedTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E0F232454E400BBD2E8 /* CompletedTask+CoreDataClass.swift */; };
 		954E2E1623245A0D00BBD2E8 /* STWModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */; };
 		954E2E1823245CCC00BBD2E8 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E1723245CCC00BBD2E8 /* ScoreManager.swift */; };
+		954E2E1923247E7F00BBD2E8 /* StickerPlacement+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E0E232454E400BBD2E8 /* StickerPlacement+CoreDataProperties.swift */; };
+		954E2E1A23247E8100BBD2E8 /* StickerPlacement+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954E2E0C232454E300BBD2E8 /* StickerPlacement+CoreDataClass.swift */; };
 		9562FB842323F3FA00590407 /* PersistentStoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9562FB832323F3FA00590407 /* PersistentStoreManager.swift */; };
 		9598AC7E2323DE26004A04BD /* Save_the_World_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AC7D2323DE26004A04BD /* Save_the_World_Tests.swift */; };
 		959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959EF3A72322FB76006AA75B /* AppDelegate.swift */; };
@@ -177,7 +179,6 @@
 			children = (
 				959EF3AD2322FB76006AA75B /* Main.storyboard */,
 				959EF3B22322FB79006AA75B /* LaunchScreen.storyboard */,
-				959EF3C423233836006AA75B /* Sticker.swift */,
 				954E2E02232444C700BBD2E8 /* UIAlertController+QuickAlert.swift */,
 			);
 			path = View;
@@ -188,8 +189,8 @@
 			children = (
 				959EF3BE23232D6F006AA75B /* HomeViewController.swift */,
 				959EF3C023232EEB006AA75B /* WorldGameViewController.swift */,
-				954E2DF6232425B000BBD2E8 /* TasksViewController.swift */,
 				959EF3C2232330FC006AA75B /* WorldScene.swift */,
+				954E2DF6232425B000BBD2E8 /* TasksViewController.swift */,
 				3972EF8E232376BB00AB442B /* LaunchScreen.swift */,
 				954E2E00232440DB00BBD2E8 /* FriendsViewController.swift */,
 				398E3B5D232481D000216870 /* FeedViewController.swift */,
@@ -204,6 +205,7 @@
 				954E2E0D232454E400BBD2E8 /* CompletedTask+CoreDataProperties.swift */,
 				954E2E0C232454E300BBD2E8 /* StickerPlacement+CoreDataClass.swift */,
 				954E2E0E232454E400BBD2E8 /* StickerPlacement+CoreDataProperties.swift */,
+				959EF3C423233836006AA75B /* Sticker.swift */,
 				959EF3C8232376F0006AA75B /* Action.swift */,
 				959EF3CB232377B4006AA75B /* Task.swift */,
 				9598AC852323EB9C004A04BD /* STWModel.xcdatamodeld */,
@@ -396,6 +398,7 @@
 				954E2E01232440DB00BBD2E8 /* FriendsViewController.swift in Sources */,
 				954E2E152324586700BBD2E8 /* CompletedTask+CoreDataClass.swift in Sources */,
 				959EF3A82322FB76006AA75B /* AppDelegate.swift in Sources */,
+				954E2E1923247E7F00BBD2E8 /* StickerPlacement+CoreDataProperties.swift in Sources */,
 				959EF3C3232330FC006AA75B /* WorldScene.swift in Sources */,
 				3972EF8F232376BB00AB442B /* LaunchScreen.swift in Sources */,
 				959EF3C723237655006AA75B /* ApiService.swift in Sources */,
@@ -404,6 +407,7 @@
 				954E2DF7232425B000BBD2E8 /* TasksViewController.swift in Sources */,
 				959EF3BF23232D6F006AA75B /* HomeViewController.swift in Sources */,
 				954E2DFF23243EF800BBD2E8 /* Notifications.swift in Sources */,
+				954E2E1A23247E8100BBD2E8 /* StickerPlacement+CoreDataClass.swift in Sources */,
 				954E2E03232444C700BBD2E8 /* UIAlertController+QuickAlert.swift in Sources */,
 				959EF3C9232376F0006AA75B /* Action.swift in Sources */,
 				959EF3C123232EEB006AA75B /* WorldGameViewController.swift in Sources */,

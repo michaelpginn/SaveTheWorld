@@ -10,6 +10,12 @@ import UIKit
 import SpriteKit
 
 struct Sticker {
+    var id:String
     var texture: SKTexture?
-    var location: CGPoint
+    var location: CGPoint?
+    
+    init(id:String){
+        self.id = id
+        self.texture = SKTexture(imageNamed: id)
+    }
 }

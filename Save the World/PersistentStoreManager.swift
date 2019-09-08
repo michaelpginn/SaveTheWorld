@@ -55,9 +55,6 @@ class PersistentStoreManager: NSObject {
     }
     
     func completeTask(task:Task){
-        
-        
-        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName:"CompletedTask") //get the list of records
@@ -82,6 +79,37 @@ class PersistentStoreManager: NSObject {
             try context.save()
         } catch _{
             print("Something went wrong saving")
+        }
+    }
+    
+    func getStickers()->[Sticker]{
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest:NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName:"StickerPlacement") //get the list of records
+        var fetchedResults:[StickerPlacement]=[]
+        do{
+            fetchedResults = try context.fetch(fetchRequest) as? [StickerPlacement] ?? []
+        } catch _{
+            print("Something went wrong getting words")
+        }
+        return fetchedResults.map({ (sp) -> Sticker in
+            var sticker = Sticker(id: sp.id ?? "")
+            sticker.location = CGPoint(x: sp.x, y: sp.y)
+            return sticker
+        })
+    }
+    
+    func saveSticker(_ sticker: Sticker){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        do{
+        let managedObject = StickerPlacement(context: context)
+        managedObject.id = sticker.id
+            managedObject.x = Double(sticker.location?.x ?? 0)
+            managedObject.y = Double(sticker.location?.y ?? 0)
+        try context.save()
+        }catch(let e){
+            print(e.localizedDescription)
         }
     }
 }
