@@ -83,31 +83,37 @@ class ApiService: NSObject {
     }
     
     /// Gets non completed tasks for a user
-    func getTasks(start: DocumentSnapshot? = nil, step: Int = 10, completion: @escaping ([Task]?, Error?, DocumentSnapshot?) -> Void){
-        let tasksCollection = db.collection("tasks")
-            .order(by: "points")
-            .limit(to: step)
+    func getTasks(start: DocumentSnapshot? = nil, step: Int = 10, completion: @escaping ([Task]?, Error?, DocumentSnapshot?, Bool) -> Void){
+        
+        
+        let tasksCollection:Query
         
         if let start = start {
-            tasksCollection.start(atDocument: start)
+            tasksCollection = db.collection("tasks")
+                .order(by: "points")
+                .start(afterDocument: start)
+                .limit(to: step)
+        }else{
+            tasksCollection = db.collection("tasks")
+                .order(by: "points")
+                .limit(to: step)
         }
         
         tasksCollection.getDocuments { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 var tasks: [Task] = []
                 for task in querySnapshot.documents {
-                    let id:String = task.get("id") as! String ?? ""
+                    let id:String = task.get("id") as? String ?? ""
                     let name:String = task.get("name") as? String ?? ""
                     let description:String = task.get("description") as? String ?? ""
                     let isEveryday:Bool = task.get("isEveryday") as? Bool ?? false
                     let points = task.get("points") as? Int ?? 0
                     tasks.append(Task(id: id, name: name, description: description, isEveryday: isEveryday, points:points))
                 }
-                
-                completion(tasks, error, querySnapshot.documents.last)
+                completion(tasks, error, querySnapshot.documents.last, tasks.count == 0)
             }
             else {
-                completion(nil, error, nil)
+                completion(nil, error, nil, false)
             }
         }
     }

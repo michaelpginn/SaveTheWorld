@@ -24,16 +24,20 @@ class ScoreManager: NSObject {
     var level:Int{
         get{
             let points = persistenceStoreManager.score
-            switch(points){
-            case 0..<5:
-                return 1
-            case 5..<15:
-                return 2
-            case 15..<25:
-                return 3
-            default:
-                return 4 + ((points - 25) / 10)
-            }
+            return ScoreManager.levelForScore(points)
+        }
+    }
+    
+    class func levelForScore(_ score:Int)->Int{
+        switch(score){
+        case 0..<5:
+            return 1
+        case 5..<15:
+            return 2
+        case 15..<25:
+            return 3
+        default:
+            return 4 + ((score - 25) / 10)
         }
     }
 }

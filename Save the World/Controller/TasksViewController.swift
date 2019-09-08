@@ -8,18 +8,29 @@
 
 import UIKit
 
-class TasksViewController: UIViewController, UITableViewDataSource, TaskCellDelegate {
+class TasksViewController: UIViewController, UITableViewDataSource, TaskCellDelegate, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     
     var persistentStore = PersistentStoreManager()
     var scoreManager = ScoreManager()
     var tasksStore: TasksStore!
     var api = ApiService()
+    var loadingMore = false
+    
+    var lastTime = Date.timeIntervalSinceReferenceDate
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadTableData), name: .TasksLoaded, object: nil)
+        tableView.delegate = self
     }
     
+    
+    @objc func reloadTableData() {
+        loadingMore = false
+        tableView.reloadData()
+    }
     
     func completeTask(task:Task){
         persistentStore.completeTask(task: task)
@@ -31,7 +42,6 @@ class TasksViewController: UIViewController, UITableViewDataSource, TaskCellDele
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return tasksStore.count
     }
     
@@ -52,6 +62,27 @@ class TasksViewController: UIViewController, UITableViewDataSource, TaskCellDele
             return protoCell!
         }else{
             return UITableViewCell()
+        }
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if loadingMore || tasksStore.gotAll{
+            return
+        }
+        
+        let now = Date.timeIntervalSinceReferenceDate
+        if now - self.lastTime < 3{
+            return
+        }
+        self.lastTime = now
+        
+        let height = scrollView.frame.size.height
+        let contentYoffset = scrollView.contentOffset.y
+        let distanceFromBottom = scrollView.contentSize.height - contentYoffset
+        if distanceFromBottom < height {
+            print("bottom of list")
+            loadingMore = true
+            tasksStore.loadMore()
         }
     }
 
