@@ -29,12 +29,12 @@ class LaunchScreen: UIViewController, UITextFieldDelegate {
         
         api.signUp(username: text, completion: { (success) in
             if success {
-//                call uhhh what did i
                 PersistentStoreManager().username = text
+                NotificationCenter.default.post(name: .UserCreated, object: nil)
                 self.dismiss(animated: true)
             }
             else {
-                let alert = UIAlertController(title: "Username taken", message:  "HAHA SUX 4 U. That name is already taken. SUX 2 SUX", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Username taken", message:  "Please choose a different username.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: ":(", style: .default, handler: nil))
                 self.present(alert, animated: true)
             }

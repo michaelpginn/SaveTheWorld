@@ -62,6 +62,18 @@ class ApiService: NSObject {
         }
     }
     
+    func getScore(username: String, completion: @escaping (Int?, Error?)->Void) {
+        db.collection("users").whereField("username", isEqualTo: username).getDocuments { (querySnapshot, error) in
+            if let querySnapshot = querySnapshot {
+                if !querySnapshot.isEmpty {
+                    let score = querySnapshot.documents.first?.get("score") as? Int
+                    completion(score, error)
+                }
+            }
+        }
+        
+    }
+    
     /// Gets non completed tasks for a user
     func getTasks(start: DocumentSnapshot? = nil, step: Int = 10, completion: @escaping ([Task]?, Error?, DocumentSnapshot?, Bool) -> Void){
         

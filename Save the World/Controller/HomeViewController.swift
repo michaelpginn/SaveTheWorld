@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
         tasksStore.loadMore()
         
         NotificationCenter.default.addObserver(self, selector: #selector(self.reloadScore), name: .TaskCompleted, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reloadUser), name: .UserCreated, object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,9 +42,13 @@ class HomeViewController: UIViewController {
             self.performSegue(withIdentifier: "showSignup", sender: self)
         }
         else {
-            self.usernameLabel.text = "\(persistentStoreManager.username ?? "")'s world"
-            reloadScore()
+            reloadUser()
         }
+    }
+    
+    @objc func reloadUser(){
+        self.usernameLabel.text = "\(persistentStoreManager.username ?? "")'s world"
+        reloadScore()
     }
     
     @objc func reloadScore(){
